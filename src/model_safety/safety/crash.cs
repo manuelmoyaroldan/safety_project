@@ -13,9 +13,11 @@ namespace model_safety.safety
         public Boolean isoutofservice { get; set; }
         public Boolean isdeleted { get; set; }
         public String comments { get; set; }
+        public int crashmeasureId { get; set; }
 
         public int companyId {get; set;}
         public company company { get; set; }
+        public crashmeasure crashmeasure { get; set; }
 
 
     }
