@@ -16,8 +16,6 @@ namespace model_safety.safety
         public equipment equipment { get; set; }
         public worker worker { get; set; }
 
-
-        
         
     }
 }
