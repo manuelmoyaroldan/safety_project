@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+using model_safety.safety;
+
 namespace api_safety
 {
     public class Startup
@@ -28,6 +30,7 @@ namespace api_safety
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddEntityFrameworkSqlite().AddDbContext<safetyContext>();
             services.AddMvc();
         }
 
