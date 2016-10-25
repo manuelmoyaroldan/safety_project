@@ -7,24 +7,34 @@ using Microsoft.EntityFrameworkCore;
 
 namespace model_safety.safety
 {
-    public class safetyContext:DbContext
+    public class safetyContext: Microsoft.EntityFrameworkCore.DbContext
     {
-        public DbSet<company> Company { get; set; }
-        public DbSet<crash> Crash { get; set; }
-        public DbSet<crashdetail> CrashDetail { get; set; }
-        public DbSet<crashmeasure> CrashMeasure { get; set; }
-        public DbSet<crashtype> CrashType { get; set; }
-        public DbSet<equipment> Equipment { get; set; }
-        public DbSet<equipmenttype> EquipmentType { get; set; }
-        public DbSet<safespot> SafeSpot { get; set; }
-        public DbSet<safespottype> SafeSpotType{ get; set; }
-        public DbSet<worker> Worker { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public safetyContext(DbContextOptions<safetyContext> options) : base(options)
         {
-            //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;");
-            optionsBuilder.UseSqlite("safety_lite.db");
         }
+        
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;");
+        //    //optionsBuilder.UseSqlite("safety_lite.db");
+        //}
+
+        public Microsoft.EntityFrameworkCore.DbSet<company> company { get; set; }
+        //public DbSet<crash> Crash { get; set; }
+        //public DbSet<crashdetail> CrashDetail { get; set; }
+        //public DbSet<crashmeasure> CrashMeasure { get; set; }
+        //public DbSet<crashtype> CrashType { get; set; }
+        //public DbSet<equipment> Equipment { get; set; }
+        //public DbSet<equipmenttype> EquipmentType { get; set; }
+        //public DbSet<safespot> SafeSpot { get; set; }
+        //public DbSet<safespottype> SafeSpotType{ get; set; }
+        //public DbSet<worker> Worker { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    //builder.Entity<DataEventRecord>().HasKey(m => m.Id);
+        //    //base.OnModelCreating(builder);
+        //}
 
 
     }

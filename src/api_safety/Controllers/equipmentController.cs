@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using model_safety;
+using Microsoft.EntityFrameworkCore;
+using model_safety.safety;
+using System.Linq;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,11 +13,24 @@ namespace api_safety.Controllers
     [Route("api/[controller]")]
     public class equipmentController : Controller
     {
+        private safetyContext _context;
+        private ILogger _logger;
+
+        public equipmentController(safetyContext context,ILoggerFactory loggerFactory)
+        {
+            _context = context;
+            _logger = loggerFactory.CreateLogger<equipmentController>();
+        }
+
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<company> Get()
         {
-            return new string[] { "value1", "value2" };
+            var companies= _context.company.ToList<company>();
+            
+            _logger.LogInformation(companies.Count.ToString());
+
+            return companies.ToList<company>();            
         }
 
         // GET api/values/5

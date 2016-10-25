@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+
 
 using model_safety.safety;
 
@@ -14,6 +16,7 @@ namespace api_safety
 {
     public class Startup
     {
+        private IHostingEnvironment _env;
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -22,6 +25,8 @@ namespace api_safety
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            _env = env;
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -29,8 +34,22 @@ namespace api_safety
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            services.AddEntityFrameworkSqlite().AddDbContext<safetyContext>();
+            //services.AddDbContext<safetyContext>(options =>
+            //    options.UseSqlite("safety_lite.db")
+            //);
+            //services.AddEntityFrameworkSqlite().AddDbContext<safetyContext>();
+            //// Add framework services.
+
+            //services.AddDbContext<safetyContext>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("EASConnection")));
+
+            //services.AddDbContext<safetyContext>(options =>
+            //    options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<safetyContext>(
+                options => { options.UseSqlite($"Data Source={_env.ContentRootPath}/safety_lite.db"); });
+
+
             services.AddMvc();
         }
 
