@@ -11,6 +11,11 @@ import { AboutComponent } from './about/about.component';
 
 import { TestDataService } from './services/testDataService';
 
+import {InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule} from 'primeng/primeng';
+
+import '../../node_modules/jquery/dist/jquery.min.js';
+import '../resources/layout/js/layout.js';  
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -18,7 +23,7 @@ import { TestDataService } from './services/testDataService';
         FormsModule,
         routing,
         HttpModule,
-        JsonpModule
+        JsonpModule, InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule
     ],
     declarations: [
         AppComponent,
