@@ -19,6 +19,7 @@ var http_1 = require('@angular/http');
 var home_component_1 = require('./home/home.component');
 var about_component_1 = require('./about/about.component');
 var testDataService_1 = require('./services/testDataService');
+var core_module_1 = require('./core/core.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,6 +31,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 app_routes_1.routing,
                 http_1.HttpModule,
+                core_module_1.CoreModule,
                 http_1.JsonpModule
             ],
             declarations: [

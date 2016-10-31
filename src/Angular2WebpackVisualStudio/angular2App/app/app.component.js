@@ -10,17 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var data_service_1 = require('./core/services/data.service');
 var AppComponent = (function () {
-    function AppComponent(router) {
+    function AppComponent(router, el, dataService) {
         this.router = router;
+        this.el = el;
+        this.dataService = dataService;
+        this.user = {};
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log("cargando componente");
+        this.dataService
+            .getUser()
+            .subscribe(function (data) { return _this.user = data; }, function (error) { return console.log('MyError' + error); }, function () { return console.log(_this.user); });
+    };
+    AppComponent.prototype.ngAfterViewInit = function () {
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             template: require('./app.component.html'),
-            styles: [String(require('./app.component.scss')), String(require('../style/app.scss'))]
+            providers: [data_service_1.DataService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [router_1.Router, core_1.ElementRef, data_service_1.DataService])
     ], AppComponent);
     return AppComponent;
 }());

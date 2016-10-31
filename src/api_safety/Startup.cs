@@ -50,6 +50,14 @@ namespace api_safety
                 options => { options.UseSqlite($"Data Source={_env.ContentRootPath}/safety_lite.db"); });
 
 
+            var policy = new Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy();
+
+            policy.Headers.Add("*");
+            policy.Methods.Add("*");
+            policy.Origins.Add("*");
+
+            services.AddCors(x => x.AddPolicy("corsGlobalPolicy", policy));
+
             services.AddMvc();
         }
 

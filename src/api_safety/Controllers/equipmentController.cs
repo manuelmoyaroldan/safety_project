@@ -24,13 +24,13 @@ namespace api_safety.Controllers
 
         // GET: api/values
         [HttpGet]
-        public IEnumerable<company> Get()
+        public IEnumerable<equipment> Get()
         {
-            var companies= _context.company.ToList<company>();
+            var equipments= _context.equipment.Include(e=>e.equipmenttype).ToList<equipment>();
             
-            _logger.LogInformation(companies.Count.ToString());
+            _logger.LogInformation(equipments.Count.ToString());
 
-            return companies.ToList<company>();            
+            return equipments.ToList<equipment>();            
         }
 
         // GET api/values/5
@@ -57,5 +57,6 @@ namespace api_safety.Controllers
         public void Delete(int id)
         {
         }
+
     }
 }

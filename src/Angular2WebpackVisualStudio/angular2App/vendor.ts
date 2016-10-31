@@ -11,17 +11,17 @@ import 'primeng/primeng';
 import 'rxjs/Rx';
 
 import 'jquery/src/jquery';
-//import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap/dist/js/bootstrap';
 
-import './resources/layout/js/layout.js';
-import './resources/layout/css/animate.css';
-import './resources/layout/css/layout-indigo.css';
-import './resources/theme/theme-indigo.css';
-import './resources/primeng.min.css';
+//import './resources/layout/js/layout.js';
+//import './resources/layout/css/animate.css';
+//import './resources/layout/css/layout-indigo.css';
+//import './resources/theme/theme-indigo.css';
+//import './resources/primeng.min.css';
 
 
-//import './css/bootstrap.css';
-//import './css/bootstrap-theme.css';
+import './css/bootstrap.css';
+import './css/bootstrap-theme.css';
 
 
 

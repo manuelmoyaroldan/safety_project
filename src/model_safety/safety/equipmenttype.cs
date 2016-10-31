@@ -8,7 +8,7 @@ namespace model_safety.safety
     public class equipmenttype
     {
         public int equipmenttypeId { get; set; }
-        public String name { get; set; }
-        public Boolean isdeleted { get; set; }
+        public string name { get; set; }
+        public bool isActive { get; set; }
     }
 }

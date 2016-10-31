@@ -8,27 +8,33 @@ import { routing } from './app.routes';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { EquipmentComponent} from './equipment/equipment.component'; 
 
 import { TestDataService } from './services/testDataService';
 
-import {InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule} from 'primeng/primeng';
+import { CoreModule }   from './core/core.module';
 
-import '../../node_modules/jquery/dist/jquery.min.js';
-import '../resources/layout/js/layout.js';  
+import {InputTextModule, DataTableModule, SharedModule} from 'primeng/primeng';
 
-@NgModule({
+//import {InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule} from 'primeng/primeng';
+
+//import '../../node_modules/jquery/dist/jquery.min.js'; 
+//import '../resources/layout/js/layout.js';  
+ 
+@NgModule({ 
     imports: [
         BrowserModule,
         CommonModule,
         FormsModule,
         routing,
         HttpModule,
-        JsonpModule, InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule
+        CoreModule, //Singleton Objects
+        JsonpModule, InputTextModule, DataTableModule, SharedModule//, InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule
     ],
     declarations: [
         AppComponent,
         AboutComponent,
-        HomeComponent
+        HomeComponent, EquipmentComponent
     ],
     providers: [
         TestDataService,

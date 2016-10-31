@@ -9,8 +9,7 @@ namespace model_safety.safety
     {
         public int companyId { get; set; }
         public String name { get; set; }
-        public Boolean isdeleted { get; set; }
-        
+        public bool isdeleted { get; set; }
     
     }
 }
