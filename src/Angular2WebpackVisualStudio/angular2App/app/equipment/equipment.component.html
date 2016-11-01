@@ -1,5 +1,5 @@
 ﻿<div class="container-fluid">
-    <div class="row grid-container">
+    <!--<div class="row grid-container">
         <div class="col-md-10">
             <div class="table">
                 <table class="table table-striped table-hover">
@@ -23,12 +23,16 @@
             </div>
         </div>
     </div>
-    <input type="text" pInputText [(ngModel)]="current.name" />{{current.name}}
-    <p-dataTable [value]="equipments">
+    <input type="text" pInputText [(ngModel)]="current.name" />{{current.name}}-->
+    <p-dataTable [value]="equipments" selectionMode="single" [(selection)]="selected" scrollable="true"  scrollHeight="200px" > 
+        <header>Equipment List</header>
+        <footer><div style="text-align: left">Selected: {{selected ? selected.name : 'none'}}</div></footer>
         <p-column field="equipmentId" header="Id"></p-column>
         <p-column field="name" header="Name"></p-column>
         <p-column field="equipmenttype.name" header="Type"></p-column>
     </p-dataTable>
+    <input type="text" pInputText [(ngModel)]="selected.name" />
+    <equipmenttypeselector></equipmenttypeselector>
     <!--<div>
         Equipment List
         <div class="panel-group">

@@ -20,10 +20,9 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log("cargando componente");
         this.dataService
             .getUser()
-            .subscribe(function (data) { return _this.user = data; }, function (error) { return console.log('MyError' + error); }, function () { return console.log(_this.user); });
+            .subscribe(function (data) { return _this.user = data; });
     };
     AppComponent.prototype.ngAfterViewInit = function () {
     };

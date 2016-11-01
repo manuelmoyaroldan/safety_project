@@ -19,12 +19,10 @@ var DataService = (function () {
         this.userBaseUrl = 'http://localhost:58333/api/user';
         this.getUser = function () {
             if (_this.user == null || _this.user == undefined) {
-                console.log("consulta api");
-                console.log(_this.userBaseUrl);
+                console.log("API User");
                 return _this.http.get(_this.userBaseUrl).map(function (res) { return res.json(); }).catch(_this.handleError);
             }
             else {
-                console.log("no consulta api");
                 return _this.user;
             }
         };

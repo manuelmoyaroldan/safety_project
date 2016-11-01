@@ -9,25 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var data_service_1 = require('../core/services/data.service');
+var equipment_service_1 = require('./equipment.service');
+var primeng_1 = require('primeng/primeng');
 var EquipmentComponent = (function () {
-    function EquipmentComponent(_dataService) {
-        this._dataService = _dataService;
-        this.message = "Hello from HomeComponent constructor";
+    function EquipmentComponent(_equipmentService) {
+        this._equipmentService = _equipmentService;
+        this.equipments = [];
+        this.current = {};
+        this.message = "Hello from EquipmentComponent constructor";
     }
     EquipmentComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._dataService
-            .GetAll()
-            .subscribe(function (data) { return _this.values = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all complete'); });
+        this._equipmentService
+            .getEquipments()
+            .subscribe(function (data) { return _this.equipments = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all complete'); });
     };
     EquipmentComponent = __decorate([
         core_1.Component({
             selector: 'equipmentcomponent',
             template: require('./equipment.component.html'),
-            providers: [data_service_1.DataService]
+            providers: [equipment_service_1.EquipmentService, primeng_1.InputTextModule, primeng_1.DataTableModule, primeng_1.SharedModule]
         }), 
-        __metadata('design:paramtypes', [data_service_1.DataService])
+        __metadata('design:paramtypes', [equipment_service_1.EquipmentService])
     ], EquipmentComponent);
     return EquipmentComponent;
 }());

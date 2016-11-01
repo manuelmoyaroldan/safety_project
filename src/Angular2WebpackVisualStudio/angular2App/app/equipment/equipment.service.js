@@ -18,24 +18,17 @@ var EquipmentService = (function () {
         this.http = http;
         this.equipmentBaseUrl = 'http://localhost:58333/api/equipment';
         this.getEquipments = function () {
-            if (_this.equipments == null || _this.equipments == undefined) {
-                console.log("consulta api");
-                console.log(_this.equipmentBaseUrl);
-                return _this.http.get(_this.equipmentBaseUrl).map(function (res) { return res.json(); }).catch(_this.handleError);
-            }
-            else {
-                console.log("no consulta api");
-                return _this.equipments;
-            }
+            console.log("API Equipments");
+            console.log(_this.equipmentBaseUrl);
+            return _this.http.get(_this.equipmentBaseUrl).map(function (res) { return res.json(); }).catch(_this.handleError);
         };
-        this.getEquipments().subscribe(function (data) { return _this.equipments = data; }, function (error) { return console.log('Error' + error); }, function () { return console.log(_this.equipments); });
     }
     EquipmentService.prototype.extractData = function (res) {
         var body = res.json();
         return body.data || {};
     };
     EquipmentService.prototype.handleError = function (error) {
-        console.error('server error:', error);
+        console.error('API Equipment server error:', error);
         console.log('error');
         if (error instanceof http_1.Response) {
             var errMessage = '';

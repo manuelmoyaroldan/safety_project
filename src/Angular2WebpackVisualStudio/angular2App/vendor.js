@@ -6,6 +6,7 @@ require('@angular/common');
 require('@angular/forms');
 require('@angular/http');
 require('@angular/router');
+require('primeng/primeng');
 require('rxjs/Rx');
 require('jquery/src/jquery');
 require('bootstrap/dist/js/bootstrap');

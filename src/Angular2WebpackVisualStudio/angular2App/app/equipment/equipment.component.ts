@@ -18,6 +18,7 @@ export class EquipmentComponent implements OnInit {
     public message: string;
     public equipments: any[] = [];
     public current: any = {};
+    public selected: any = {};
 
     constructor(private _equipmentService: EquipmentService) {
         this.message = "Hello from EquipmentComponent constructor";
