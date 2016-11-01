@@ -24,15 +24,16 @@
         </div>
     </div>
     <input type="text" pInputText [(ngModel)]="current.name" />{{current.name}}-->
-    <p-dataTable [value]="equipments" selectionMode="single" [(selection)]="selected" scrollable="true"  scrollHeight="200px" > 
+    <p-dataTable [value]="equipments" selectionMode="single" [(selection)]="selected" scrollable="true"  scrollHeight="200px" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)"> 
         <header>Equipment List</header>
         <footer><div style="text-align: left">Selected: {{selected ? selected.name : 'none'}}</div></footer>
         <p-column field="equipmentId" header="Id"></p-column>
         <p-column field="name" header="Name"></p-column>
         <p-column field="equipmenttype.name" header="Type"></p-column>
     </p-dataTable>
+    {{selected ? selected.name : any}}
     <input type="text" pInputText [(ngModel)]="selected.name" />
-    <equipmenttypeselector></equipmenttypeselector>
+    <equipmenttypeselector [selected]="selected.equipmenttype"></equipmenttypeselector>
     <!--<div>
         Equipment List
         <div class="panel-group">

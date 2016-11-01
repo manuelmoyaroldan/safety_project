@@ -31,4 +31,10 @@ export class EquipmentComponent implements OnInit {
             error => console.log(error),
             () => console.log('Get all complete'));
     }
+    onRowSelect(event) {
+    }
+
+    onRowUnselect(event) {
+        this.selected = {};
+    }
 }

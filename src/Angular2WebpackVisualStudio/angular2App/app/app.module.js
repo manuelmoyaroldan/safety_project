@@ -19,6 +19,7 @@ var http_1 = require('@angular/http');
 var home_component_1 = require('./home/home.component');
 var about_component_1 = require('./about/about.component');
 var equipment_component_1 = require('./equipment/equipment.component');
+var equipmenttype_selector_1 = require('./equipmenttype/equipmenttype.selector');
 var testDataService_1 = require('./services/testDataService');
 var core_module_1 = require('./core/core.module');
 var primeng_1 = require('primeng/primeng');
@@ -34,12 +35,12 @@ var AppModule = (function () {
                 app_routes_1.routing,
                 http_1.HttpModule,
                 core_module_1.CoreModule,
-                http_1.JsonpModule, primeng_1.InputTextModule, primeng_1.DataTableModule, primeng_1.SharedModule
+                http_1.JsonpModule, primeng_1.InputTextModule, primeng_1.DataTableModule, primeng_1.SharedModule, primeng_1.DropdownModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 about_component_1.AboutComponent,
-                home_component_1.HomeComponent, equipment_component_1.EquipmentComponent
+                home_component_1.HomeComponent, equipment_component_1.EquipmentComponent, equipmenttype_selector_1.EquipmenttypeSelector
             ],
             providers: [
                 testDataService_1.TestDataService,

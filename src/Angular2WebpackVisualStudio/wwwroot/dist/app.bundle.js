@@ -41,9 +41,9 @@ webpackJsonp([0],{
 	var home_component_1 = __webpack_require__(/*! ./home/home.component */ 65);
 	var about_component_1 = __webpack_require__(/*! ./about/about.component */ 68);
 	var equipment_component_1 = __webpack_require__(/*! ./equipment/equipment.component */ 70);
-	var equipmenttype_selector_1 = __webpack_require__(/*! ./equipmenttype/equipmenttype.selector */ 816);
+	var equipmenttype_selector_1 = __webpack_require__(/*! ./equipmenttype/equipmenttype.selector */ 141);
 	var testDataService_1 = __webpack_require__(/*! ./services/testDataService */ 66);
-	var core_module_1 = __webpack_require__(/*! ./core/core.module */ 141);
+	var core_module_1 = __webpack_require__(/*! ./core/core.module */ 144);
 	var primeng_1 = __webpack_require__(/*! primeng/primeng */ 72);
 	var AppModule = (function () {
 	    function AppModule() {
@@ -451,6 +451,11 @@ webpackJsonp([0],{
 	            .getEquipments()
 	            .subscribe(function (data) { return _this.equipments = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all complete'); });
 	    };
+	    EquipmentComponent.prototype.onRowSelect = function (event) {
+	    };
+	    EquipmentComponent.prototype.onRowUnselect = function (event) {
+	        this.selected = {};
+	    };
 	    EquipmentComponent = __decorate([
 	        core_1.Component({
 	            selector: 'equipmentcomponent',
@@ -533,49 +538,11 @@ webpackJsonp([0],{
   \************************************************************/
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"container-fluid\">\r\n    <!--<div class=\"row grid-container\">\r\n        <div class=\"col-md-10\">\r\n            <div class=\"table\">\r\n                <table class=\"table table-striped table-hover\">\r\n                    <thead>\r\n                        <tr>\r\n                            <th>Id</th>\r\n                            <th>Equipment</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr *ngFor=\"let equipment of equipments\">\r\n                            <td>{{ equipment.equipmentId }}</td>\r\n                            <td>{{ equipment.name}}</td>\r\n                        </tr>\r\n                        <tr *ngIf=\"!equipments.length\">\r\n                            <td>&nbsp;</td>\r\n                            <td colspan=\"6\">No Records Found</td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <input type=\"text\" pInputText [(ngModel)]=\"current.name\" />{{current.name}}-->\r\n    <p-dataTable [value]=\"equipments\" selectionMode=\"single\" [(selection)]=\"selected\" scrollable=\"true\"  scrollHeight=\"200px\" > \r\n        <header>Equipment List</header>\r\n        <footer><div style=\"text-align: left\">Selected: {{selected ? selected.name : 'none'}}</div></footer>\r\n        <p-column field=\"equipmentId\" header=\"Id\"></p-column>\r\n        <p-column field=\"name\" header=\"Name\"></p-column>\r\n        <p-column field=\"equipmenttype.name\" header=\"Type\"></p-column>\r\n    </p-dataTable>\r\n    <input type=\"text\" pInputText [(ngModel)]=\"selected.name\" />\r\n    <equipmenttypeselector></equipmenttypeselector>\r\n    <!--<div>\r\n        Equipment List\r\n        <div class=\"panel-group\">\r\n            <ul>\r\n                <li *ngFor=\"let equipment of equipments\">\r\n                    <span>{{equipment.name}} </span>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>-->\r\n</div>\r\n"
+	module.exports = "<div class=\"container-fluid\">\r\n    <!--<div class=\"row grid-container\">\r\n        <div class=\"col-md-10\">\r\n            <div class=\"table\">\r\n                <table class=\"table table-striped table-hover\">\r\n                    <thead>\r\n                        <tr>\r\n                            <th>Id</th>\r\n                            <th>Equipment</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr *ngFor=\"let equipment of equipments\">\r\n                            <td>{{ equipment.equipmentId }}</td>\r\n                            <td>{{ equipment.name}}</td>\r\n                        </tr>\r\n                        <tr *ngIf=\"!equipments.length\">\r\n                            <td>&nbsp;</td>\r\n                            <td colspan=\"6\">No Records Found</td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <input type=\"text\" pInputText [(ngModel)]=\"current.name\" />{{current.name}}-->\r\n    <p-dataTable [value]=\"equipments\" selectionMode=\"single\" [(selection)]=\"selected\" scrollable=\"true\"  scrollHeight=\"200px\" (onRowSelect)=\"onRowSelect($event)\" (onRowUnselect)=\"onRowUnselect($event)\"> \r\n        <header>Equipment List</header>\r\n        <footer><div style=\"text-align: left\">Selected: {{selected ? selected.name : 'none'}}</div></footer>\r\n        <p-column field=\"equipmentId\" header=\"Id\"></p-column>\r\n        <p-column field=\"name\" header=\"Name\"></p-column>\r\n        <p-column field=\"equipmenttype.name\" header=\"Type\"></p-column>\r\n    </p-dataTable>\r\n    {{selected ? selected.name : any}}\r\n    <input type=\"text\" pInputText [(ngModel)]=\"selected.name\" />\r\n    <equipmenttypeselector [selected]=\"selected.equipmenttype\"></equipmenttypeselector>\r\n    <!--<div>\r\n        Equipment List\r\n        <div class=\"panel-group\">\r\n            <ul>\r\n                <li *ngFor=\"let equipment of equipments\">\r\n                    <span>{{equipment.name}} </span>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>-->\r\n</div>\r\n"
 
 /***/ },
 
 /***/ 141:
-/*!*********************************************!*\
-  !*** ./angular2App/app/core/core.module.ts ***!
-  \*********************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var common_1 = __webpack_require__(/*! @angular/common */ 22);
-	var data_service_1 = __webpack_require__(/*! ./services/data.service */ 59);
-	var CoreModule = (function () {
-	    function CoreModule() {
-	    }
-	    CoreModule = __decorate([
-	        core_1.NgModule({
-	            imports: [common_1.CommonModule],
-	            declarations: [],
-	            exports: [common_1.CommonModule],
-	            providers: [data_service_1.DataService]
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], CoreModule);
-	    return CoreModule;
-	}());
-	exports.CoreModule = CoreModule;
-
-
-/***/ },
-
-/***/ 816:
 /*!*****************************************************************!*\
   !*** ./angular2App/app/equipmenttype/equipmenttype.selector.ts ***!
   \*****************************************************************/
@@ -592,13 +559,13 @@ webpackJsonp([0],{
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var equipmenttype_service_1 = __webpack_require__(/*! ./equipmenttype.service */ 817);
+	var equipmenttype_service_1 = __webpack_require__(/*! ./equipmenttype.service */ 142);
 	var EquipmenttypeSelector = (function () {
 	    function EquipmenttypeSelector(_equipmenttypeService) {
 	        this._equipmenttypeService = _equipmenttypeService;
 	        this.list = [];
 	        this.listitem = [];
-	        this.selected = {};
+	        this.selecteditem = {};
 	    }
 	    EquipmenttypeSelector.prototype.ngOnInit = function () {
 	        var _this = this;
@@ -608,15 +575,20 @@ webpackJsonp([0],{
 	    };
 	    EquipmenttypeSelector.prototype.loadSelectItem = function () {
 	        this.listitem = [];
+	        this.listitem.push({ label: '(Select Item)', value: {} });
 	        for (var _i = 0, _a = this.list; _i < _a.length; _i++) {
 	            var item = _a[_i];
 	            this.listitem.push({ label: item.name, value: item });
 	        }
 	    };
+	    __decorate([
+	        core_1.Input(), 
+	        __metadata('design:type', Object)
+	    ], EquipmenttypeSelector.prototype, "selected", void 0);
 	    EquipmenttypeSelector = __decorate([
 	        core_1.Component({
 	            selector: 'equipmenttypeselector',
-	            template: __webpack_require__(/*! ./equipmenttype.selector.html */ 818),
+	            template: __webpack_require__(/*! ./equipmenttype.selector.html */ 143),
 	            providers: [equipmenttype_service_1.EquipmenttypeService]
 	        }), 
 	        __metadata('design:paramtypes', [equipmenttype_service_1.EquipmenttypeService])
@@ -628,7 +600,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 817:
+/***/ 142:
 /*!****************************************************************!*\
   !*** ./angular2App/app/equipmenttype/equipmenttype.service.ts ***!
   \****************************************************************/
@@ -683,13 +655,51 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 818:
+/***/ 143:
 /*!*******************************************************************!*\
   !*** ./angular2App/app/equipmenttype/equipmenttype.selector.html ***!
   \*******************************************************************/
 /***/ function(module, exports) {
 
-	module.exports = "<div>\r\n    <p-dropdown [options]=\"listitem\" [(ngModel)]=\"selected\"></p-dropdown>\r\n    <!--{{selected.name}}-->\r\n</div>"
+	module.exports = "<div>\r\n    <p-dropdown [options]=\"listitem\" [(ngModel)]=\"selecteditem\"></p-dropdown>\r\n    {{selected ? selected.name: any}}\r\n</div>"
+
+/***/ },
+
+/***/ 144:
+/*!*********************************************!*\
+  !*** ./angular2App/app/core/core.module.ts ***!
+  \*********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(/*! @angular/core */ 3);
+	var common_1 = __webpack_require__(/*! @angular/common */ 22);
+	var data_service_1 = __webpack_require__(/*! ./services/data.service */ 59);
+	var CoreModule = (function () {
+	    function CoreModule() {
+	    }
+	    CoreModule = __decorate([
+	        core_1.NgModule({
+	            imports: [common_1.CommonModule],
+	            declarations: [],
+	            exports: [common_1.CommonModule],
+	            providers: [data_service_1.DataService]
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], CoreModule);
+	    return CoreModule;
+	}());
+	exports.CoreModule = CoreModule;
+
 
 /***/ }
 

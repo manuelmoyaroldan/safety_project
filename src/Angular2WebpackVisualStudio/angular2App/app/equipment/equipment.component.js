@@ -16,6 +16,7 @@ var EquipmentComponent = (function () {
         this._equipmentService = _equipmentService;
         this.equipments = [];
         this.current = {};
+        this.selected = {};
         this.message = "Hello from EquipmentComponent constructor";
     }
     EquipmentComponent.prototype.ngOnInit = function () {

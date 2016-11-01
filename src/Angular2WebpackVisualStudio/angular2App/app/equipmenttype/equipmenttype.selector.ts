@@ -13,10 +13,11 @@ import { DropdownModule, SelectItem } from 'primeng/primeng';
 })
 
 export class EquipmenttypeSelector implements OnInit {
+    @Input() selected: any;
 
     public list: any[] = [];
     public listitem: SelectItem[]=[];
-    public selected: any= {};
+    public selecteditem: any= {};
 
     constructor(private _equipmenttypeService: EquipmenttypeService) {
     }
@@ -31,6 +32,7 @@ export class EquipmenttypeSelector implements OnInit {
 
     private loadSelectItem() {
         this.listitem = [];
+        this.listitem.push({ label: '(Select Item)', value: {}})
         for (let item of this.list) {
             this.listitem.push({ label: item.name, value: item });
         }
