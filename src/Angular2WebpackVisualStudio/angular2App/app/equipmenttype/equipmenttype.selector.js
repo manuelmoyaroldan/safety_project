@@ -25,6 +25,7 @@ var EquipmenttypeSelector = (function () {
     };
     EquipmenttypeSelector.prototype.loadSelectItem = function () {
         this.listitem = [];
+        this.listitem.push({ label: '(Select Item)', value: {} });
         for (var _i = 0, _a = this.list; _i < _a.length; _i++) {
             var item = _a[_i];
             this.listitem.push({ label: item.name, value: item });

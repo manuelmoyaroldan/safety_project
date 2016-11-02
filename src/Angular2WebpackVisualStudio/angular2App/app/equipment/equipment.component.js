@@ -25,6 +25,11 @@ var EquipmentComponent = (function () {
             .getEquipments()
             .subscribe(function (data) { return _this.equipments = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all complete'); });
     };
+    EquipmentComponent.prototype.onRowSelect = function (event) {
+    };
+    EquipmentComponent.prototype.onRowUnselect = function (event) {
+        this.selected = {};
+    };
     EquipmentComponent = __decorate([
         core_1.Component({
             selector: 'equipmentcomponent',
