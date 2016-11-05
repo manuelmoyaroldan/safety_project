@@ -41,10 +41,10 @@ webpackJsonp([0],{
 	var home_component_1 = __webpack_require__(/*! ./home/home.component */ 65);
 	var about_component_1 = __webpack_require__(/*! ./about/about.component */ 68);
 	var equipment_component_1 = __webpack_require__(/*! ./equipment/equipment.component */ 70);
-	var equipmenttype_selector_1 = __webpack_require__(/*! ./equipmenttype/equipmenttype.selector */ 141);
+	var equipmenttype_selector_1 = __webpack_require__(/*! ./equipmenttype/equipmenttype.selector */ 142);
 	var testDataService_1 = __webpack_require__(/*! ./services/testDataService */ 66);
-	var core_module_1 = __webpack_require__(/*! ./core/core.module */ 144);
-	var primeng_1 = __webpack_require__(/*! primeng/primeng */ 72);
+	var core_module_1 = __webpack_require__(/*! ./core/core.module */ 145);
+	var primeng_1 = __webpack_require__(/*! primeng/primeng */ 73);
 	var AppModule = (function () {
 	    function AppModule() {
 	    }
@@ -57,7 +57,7 @@ webpackJsonp([0],{
 	                app_routes_1.routing,
 	                http_1.HttpModule,
 	                core_module_1.CoreModule,
-	                http_1.JsonpModule, primeng_1.InputTextModule, primeng_1.DataTableModule, primeng_1.SharedModule, primeng_1.DropdownModule
+	                http_1.JsonpModule, primeng_1.InputTextModule, primeng_1.DataTableModule, primeng_1.SharedModule, primeng_1.DropdownModule, primeng_1.DialogModule, primeng_1.ContextMenuModule
 	            ],
 	            declarations: [
 	                app_component_1.AppComponent,
@@ -436,10 +436,11 @@ webpackJsonp([0],{
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
 	var equipment_service_1 = __webpack_require__(/*! ./equipment.service */ 71);
-	var primeng_1 = __webpack_require__(/*! primeng/primeng */ 72);
+	var primeng_1 = __webpack_require__(/*! primeng/primeng */ 73);
 	var EquipmentComponent = (function () {
 	    function EquipmentComponent(_equipmentService) {
 	        this._equipmentService = _equipmentService;
+	        this.display = false;
 	        this.equipments = [];
 	        this.current = {};
 	        this.selected = {};
@@ -450,17 +451,29 @@ webpackJsonp([0],{
 	        this._equipmentService
 	            .getEquipments()
 	            .subscribe(function (data) { return _this.equipments = data; }, function (error) { return console.log(error); }, function () { return console.log('Get all complete'); });
+	        this.items = [
+	            { label: 'View', icon: 'fa-search', command: function (event) { return _this.showDialog(); } },
+	            { label: 'Delete', icon: 'fa-close', command: function (event) { return _this.onSubmit(); } }
+	        ];
 	    };
 	    EquipmentComponent.prototype.onRowSelect = function (event) {
 	    };
 	    EquipmentComponent.prototype.onRowUnselect = function (event) {
 	        this.selected = {};
 	    };
+	    EquipmentComponent.prototype.showDialog = function () {
+	        this.display = true;
+	    };
+	    EquipmentComponent.prototype.onSubmit = function () {
+	        var _this = this;
+	        this._equipmentService.createEquipment(this.selected)
+	            .subscribe(function (data) { return _this.selected = data; });
+	    };
 	    EquipmentComponent = __decorate([
 	        core_1.Component({
 	            selector: 'equipmentcomponent',
-	            template: __webpack_require__(/*! ./equipment.component.html */ 140),
-	            providers: [equipment_service_1.EquipmentService, primeng_1.InputTextModule, primeng_1.DataTableModule, primeng_1.SharedModule]
+	            template: __webpack_require__(/*! ./equipment.component.html */ 141),
+	            providers: [equipment_service_1.EquipmentService, primeng_1.InputTextModule, primeng_1.DataTableModule, primeng_1.SharedModule, primeng_1.DialogModule, primeng_1.ContextMenuModule]
 	        }), 
 	        __metadata('design:paramtypes', [equipment_service_1.EquipmentService])
 	    ], EquipmentComponent);
@@ -502,6 +515,16 @@ webpackJsonp([0],{
 	            return _this.http.get(_this.equipmentBaseUrl).map(function (res) { return res.json(); }).catch(_this.handleError);
 	        };
 	    }
+	    EquipmentService.prototype.updateEquipment = function (equipment) {
+	        return this.http.put(this.equipmentBaseUrl + '/' + equipment.equipmentId, equipment)
+	            .map(function (res) { return res.json(); })
+	            .catch(this.handleError);
+	    };
+	    EquipmentService.prototype.createEquipment = function (equipment) {
+	        return this.http.post(this.equipmentBaseUrl, equipment)
+	            .map(function (res) { return res.json(); })
+	            .catch(this.handleError);
+	    };
 	    EquipmentService.prototype.extractData = function (res) {
 	        var body = res.json();
 	        return body.data || {};
@@ -532,17 +555,17 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 140:
+/***/ 141:
 /*!************************************************************!*\
   !*** ./angular2App/app/equipment/equipment.component.html ***!
   \************************************************************/
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"container-fluid\">\r\n    <!--<div class=\"row grid-container\">\r\n        <div class=\"col-md-10\">\r\n            <div class=\"table\">\r\n                <table class=\"table table-striped table-hover\">\r\n                    <thead>\r\n                        <tr>\r\n                            <th>Id</th>\r\n                            <th>Equipment</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr *ngFor=\"let equipment of equipments\">\r\n                            <td>{{ equipment.equipmentId }}</td>\r\n                            <td>{{ equipment.name}}</td>\r\n                        </tr>\r\n                        <tr *ngIf=\"!equipments.length\">\r\n                            <td>&nbsp;</td>\r\n                            <td colspan=\"6\">No Records Found</td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <input type=\"text\" pInputText [(ngModel)]=\"current.name\" />{{current.name}}-->\r\n    <p-dataTable [value]=\"equipments\" selectionMode=\"single\" [(selection)]=\"selected\" scrollable=\"true\"  scrollHeight=\"200px\" (onRowSelect)=\"onRowSelect($event)\" (onRowUnselect)=\"onRowUnselect($event)\"> \r\n        <header>Equipment List</header>\r\n        <footer><div style=\"text-align: left\">Selected: {{selected ? selected.name : 'none'}}</div></footer>\r\n        <p-column field=\"equipmentId\" header=\"Id\"></p-column>\r\n        <p-column field=\"name\" header=\"Name\"></p-column>\r\n        <p-column field=\"equipmenttype.name\" header=\"Type\"></p-column>\r\n    </p-dataTable>\r\n    {{selected ? selected.name : any}}\r\n    <input type=\"text\" pInputText [(ngModel)]=\"selected.name\" />\r\n    <equipmenttypeselector [selected]=\"selected.equipmenttype\"></equipmenttypeselector>\r\n    <!--<div>\r\n        Equipment List\r\n        <div class=\"panel-group\">\r\n            <ul>\r\n                <li *ngFor=\"let equipment of equipments\">\r\n                    <span>{{equipment.name}} </span>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>-->\r\n</div>\r\n"
+	module.exports = "<div class=\"container-fluid\">\r\n    <!--<div class=\"row grid-container\">\r\n        <div class=\"col-md-10\">\r\n            <div class=\"table\">\r\n                <table class=\"table table-striped table-hover\">\r\n                    <thead>\r\n                        <tr>\r\n                            <th>Id</th>\r\n                            <th>Equipment</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr *ngFor=\"let equipment of equipments\">\r\n                            <td>{{ equipment.equipmentId }}</td>\r\n                            <td>{{ equipment.name}}</td>\r\n                        </tr>\r\n                        <tr *ngIf=\"!equipments.length\">\r\n                            <td>&nbsp;</td>\r\n                            <td colspan=\"6\">No Records Found</td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <input type=\"text\" pInputText [(ngModel)]=\"current.name\" />{{current.name}}-->\r\n    <p-dataTable [value]=\"equipments\" \r\n                 selectionMode=\"single\" \r\n                 [(selection)]=\"selected\" \r\n                 scrollable=\"true\"  \r\n                 scrollHeight=\"200px\" \r\n                 [contextMenu]=\"cm\"\r\n                 (onRowSelect)=\"onRowSelect($event)\" \r\n                 (onRowUnselect)=\"onRowUnselect($event)\"> \r\n        <header>Equipment List</header>\r\n        <footer><div style=\"text-align: left\">Selected: {{selected ? selected.name : 'none'}}</div></footer>\r\n        <p-column field=\"equipmentId\" header=\"Id\"></p-column>\r\n        <p-column field=\"name\" header=\"Name\"></p-column>\r\n        <p-column field=\"equipmenttype.name\" header=\"Type\"></p-column>\r\n    </p-dataTable>\r\n    <p-contextMenu #cm [model]=\"items\"></p-contextMenu>\r\n    <button type=\"text\" (click)=\"showDialog()\" pButton icon=\"fa-external-link-square\" label=\"Show\"></button>\r\n    <!--{{selected ? selected.name : any}}-->\r\n    <p-dialog [(visible)]=\"display\" modal=\"true\" responsive=\"true\">\r\n        <header>\r\n            Header content here\r\n        </header>\r\n        <form (ngSubmit)=\"onSubmit()\" #customerForm=\"ngForm\" class=\"editForm\" novalidate>\r\n            <div class=\"form-group\">\r\n                <label>Name {{selected ? selected.equipmentId : any}}</label>\r\n                <!--<input type=\"text\" pInputText name=\"name\" [(ngModel)]=\"selected.name\" #name=\"ngModel\" />-->\r\n                <input type=\"text\" class=\"form-control\" name=\"name\" [(ngModel)]=\"selected.name\" #Name=\"ngModel\" required>\r\n                <div class=\"alert alert-danger\" [hidden]=\"selected.name\">Name is required</div>\r\n            </div>\r\n            <equipmenttypeselector [selected]=\"selected.equipmenttype\"></equipmenttypeselector>\r\n            <!--<div class=\"form-group\">\r\n            <label>State</label>\r\n            <select class=\"form-control\"\r\n                    [(ngModel)]=\"customer.state.abbreviation\"\r\n                    name=\"state\"\r\n                    required>\r\n                <option *ngFor=\"let state of states\" [ngValue]=\"state.abbreviation\">{{state.name}}</option>\r\n            </select>\r\n        </div>-->\r\n            <button class=\"btn btn-default\" (click)=\"onCancel($event)\">Cancel</button>&nbsp;&nbsp;\r\n            <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!customerForm.dirty || !customerForm.valid\">Update</button>\r\n            <div class=\"alert alert-danger\" *ngIf=\"errorMessage != null\">{{ errorMessage }}</div>\r\n        </form>\r\n\r\n        <footer>\r\n            Footer content here\r\n        </footer>\r\n    </p-dialog>\r\n    <div class=\"container-fluid\" >\r\n    </div> \r\n    \r\n    \r\n    <!--<div>\r\n        Equipment List\r\n        <div class=\"panel-group\">\r\n            <ul>\r\n                <li *ngFor=\"let equipment of equipments\">\r\n                    <span>{{equipment.name}} </span>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>-->\r\n</div>\r\n"
 
 /***/ },
 
-/***/ 141:
+/***/ 142:
 /*!*****************************************************************!*\
   !*** ./angular2App/app/equipmenttype/equipmenttype.selector.ts ***!
   \*****************************************************************/
@@ -559,7 +582,7 @@ webpackJsonp([0],{
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(/*! @angular/core */ 3);
-	var equipmenttype_service_1 = __webpack_require__(/*! ./equipmenttype.service */ 142);
+	var equipmenttype_service_1 = __webpack_require__(/*! ./equipmenttype.service */ 143);
 	var EquipmenttypeSelector = (function () {
 	    function EquipmenttypeSelector(_equipmenttypeService) {
 	        this._equipmenttypeService = _equipmenttypeService;
@@ -588,7 +611,7 @@ webpackJsonp([0],{
 	    EquipmenttypeSelector = __decorate([
 	        core_1.Component({
 	            selector: 'equipmenttypeselector',
-	            template: __webpack_require__(/*! ./equipmenttype.selector.html */ 143),
+	            template: __webpack_require__(/*! ./equipmenttype.selector.html */ 144),
 	            providers: [equipmenttype_service_1.EquipmenttypeService]
 	        }), 
 	        __metadata('design:paramtypes', [equipmenttype_service_1.EquipmenttypeService])
@@ -600,7 +623,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 142:
+/***/ 143:
 /*!****************************************************************!*\
   !*** ./angular2App/app/equipmenttype/equipmenttype.service.ts ***!
   \****************************************************************/
@@ -655,7 +678,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 143:
+/***/ 144:
 /*!*******************************************************************!*\
   !*** ./angular2App/app/equipmenttype/equipmenttype.selector.html ***!
   \*******************************************************************/
@@ -665,7 +688,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 144:
+/***/ 145:
 /*!*********************************************!*\
   !*** ./angular2App/app/core/core.module.ts ***!
   \*********************************************/

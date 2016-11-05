@@ -9,7 +9,7 @@ namespace model_safety.safety
     {
         public int equipmentId { get; set; }
         public string name { get; set; }
-        public int equipmenttypeId { get; set; }
+        public int? equipmenttypeId { get; set; }
         public bool isActive { get; set; }
 
         public equipmenttype equipmenttype { get; set; }

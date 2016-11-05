@@ -10,13 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var equipment_service_1 = require('./equipment.service');
+var interfaces_1 = require('../shared/interfaces');
 var primeng_1 = require('primeng/primeng');
 var EquipmentComponent = (function () {
     function EquipmentComponent(_equipmentService) {
         this._equipmentService = _equipmentService;
         this.equipments = [];
-        this.current = {};
-        this.selected = {};
         this.message = "Hello from EquipmentComponent constructor";
     }
     EquipmentComponent.prototype.ngOnInit = function () {
@@ -28,7 +27,12 @@ var EquipmentComponent = (function () {
     EquipmentComponent.prototype.onRowSelect = function (event) {
     };
     EquipmentComponent.prototype.onRowUnselect = function (event) {
-        this.selected = {};
+        this.selected = new interfaces_1.Equipment();
+    };
+    EquipmentComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this._equipmentService.createEquipment(this.selected)
+            .subscribe(function (data) { return _this.selected = data; });
     };
     EquipmentComponent = __decorate([
         core_1.Component({

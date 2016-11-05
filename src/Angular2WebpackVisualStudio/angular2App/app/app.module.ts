@@ -16,7 +16,7 @@ import { TestDataService } from './services/testDataService';
 
 import { CoreModule }   from './core/core.module';
 
-import { InputTextModule, DataTableModule, SharedModule, DropdownModule } from 'primeng/primeng';
+import { InputTextModule, DataTableModule, SharedModule, DropdownModule, DialogModule, ContextMenuModule } from 'primeng/primeng';
 
 //import {InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule} from 'primeng/primeng';
 
@@ -31,7 +31,7 @@ import { InputTextModule, DataTableModule, SharedModule, DropdownModule } from '
         routing,
         HttpModule,
         CoreModule, //Singleton Objects
-        JsonpModule, InputTextModule, DataTableModule, SharedModule, DropdownModule //, InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule
+        JsonpModule, InputTextModule, DataTableModule, SharedModule, DropdownModule, DialogModule, ContextMenuModule //, InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule
     ],
     declarations: [
         AppComponent,

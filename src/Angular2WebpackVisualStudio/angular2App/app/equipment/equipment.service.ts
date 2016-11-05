@@ -4,13 +4,15 @@ import 'rxjs/add/operator/map';
 //Grab everything with import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 
+import { Equipment, EquipmentType } from '../shared/interfaces';
+
 
 @Injectable()
 export class EquipmentService {
 
-    equipment: any;
+    //equipment: any;
     equipmentBaseUrl: string = 'http://localhost:58333/api/equipment';
-    equipments: Observable<any[]>;
+    equipments: Observable<Equipment[]>;
 
     constructor(private http: Http) {
     }
@@ -21,6 +23,19 @@ export class EquipmentService {
             console.log(this.equipmentBaseUrl);
             return this.http.get(this.equipmentBaseUrl).map(res => res.json()).catch(this.handleError);
     }
+
+    updateEquipment(equipment: any): Observable<any> {
+        return this.http.put(this.equipmentBaseUrl + '/' + equipment.equipmentId, equipment)
+            .map((res: Response) => res.json())
+            .catch(this.handleError);
+    }
+
+    createEquipment(equipment: any): Observable<any> {
+        return this.http.post(this.equipmentBaseUrl, equipment)
+            .map((res: Response) => res.json())
+            .catch(this.handleError);
+    }
+
 
     private extractData(res: Response) {
         let body = res.json();
