@@ -38,7 +38,7 @@ export class EquipmentComponent implements OnInit {
 
         this.items = [
             { label: 'View', icon: 'fa-search', command: (event) => this.showDialog() },
-            { label: 'Delete', icon: 'fa-close', command: (event) => this.onSubmit() }
+            { label: 'Delete', icon: 'fa-close', command: (event) => this.delete() }
         ];
     }
     
@@ -68,6 +68,28 @@ export class EquipmentComponent implements OnInit {
         //    });
         this._equipmentService.createEquipment(this.selected)
             .subscribe(data=> this.selected=data);
+    }
+    delete() {
+        this.selected.isActive = false;
+        this._equipmentService
+            .deleteEquipment(this.selected)
+            .then(() => {
+                this.equipments = this.equipments.filter(h => h.equipmentId !== this.selected.equipmentId);
+                //if (this.selected === this.selected) { this.selected = null; }
+            });
+        //this._equipmentService.deleteEquipment(this.selected).subscribe((status: any) => {
+        //        if (status) {
+        //            console.log("delete");
+        //            //Mark form as pristine so that CanDeactivateGuard won't prompt before navigation
+        //            //this.customerForm.form.markAsPristine();
+        //            //this.router.navigate(['/']);
+        //        }
+        //        else {
+        //            console.log("delete error");
+        //            //this.errorMessage = 'Unable to save customer';
+        //        }
+        //    });
+
     }
 
 

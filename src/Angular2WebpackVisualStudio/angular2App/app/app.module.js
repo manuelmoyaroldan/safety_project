@@ -35,7 +35,7 @@ var AppModule = (function () {
                 app_routes_1.routing,
                 http_1.HttpModule,
                 core_module_1.CoreModule,
-                http_1.JsonpModule, primeng_1.InputTextModule, primeng_1.DataTableModule, primeng_1.SharedModule, primeng_1.DropdownModule
+                http_1.JsonpModule, primeng_1.InputTextModule, primeng_1.DataTableModule, primeng_1.SharedModule, primeng_1.DropdownModule, primeng_1.DialogModule, primeng_1.ContextMenuModule
             ],
             declarations: [
                 app_component_1.AppComponent,

@@ -25,15 +25,18 @@ export class EquipmentService {
     }
 
     updateEquipment(equipment: any): Observable<any> {
-        return this.http.put(this.equipmentBaseUrl + '/' + equipment.equipmentId, equipment)
-            .map((res: Response) => res.json())
-            .catch(this.handleError);
+        return this.http.put(this.equipmentBaseUrl + '/' + equipment.equipmentId, equipment).map((res: Response) => res.json()).catch(this.handleError);
     }
 
     createEquipment(equipment: any): Observable<any> {
-        return this.http.post(this.equipmentBaseUrl, equipment)
-            .map((res: Response) => res.json())
+        return this.http.post(this.equipmentBaseUrl, equipment).map((res: Response) => res.json()).catch(this.handleError);
+    }
+    deleteEquipment(equipment: any): Promise<void> {
+        return this.http.delete(this.equipmentBaseUrl + '/' + equipment.equipmentId)
+            .toPromise()
+            .then(() => null)
             .catch(this.handleError);
+        //return this.http.delete(this.equipmentBaseUrl+'/'+equipment.equipmentId).map((res: Response)=> res.json()).catch(this.handleError);
     }
 
 

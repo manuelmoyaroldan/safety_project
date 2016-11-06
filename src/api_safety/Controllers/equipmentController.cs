@@ -26,7 +26,7 @@ namespace api_safety.Controllers
         [HttpGet]
         public IEnumerable<equipment> Get()
         {
-            var equipments= _context.equipment.Include(e=>e.equipmenttype).ToList<equipment>();
+            var equipments= _context.equipment.Include(e=>e.equipmenttype).Where(e=>e.isActive==true).ToList<equipment>();
             //var equipments = _context.equipment.ToList<equipment>();
             _logger.LogInformation(equipments.Count.ToString());
 
@@ -81,8 +81,23 @@ namespace api_safety.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            _logger.LogInformation("Equipment put {0}",id);
+            var equipment = _context.equipment.Where(e => e.equipmentId == id).FirstOrDefault<equipment>();
+            if (equipment != null)
+            {
+                equipment.isActive= false;
+
+                _context.SaveChanges();
+
+                _logger.LogInformation("Equipment put");
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
     }

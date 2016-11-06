@@ -24,13 +24,15 @@ var EquipmentService = (function () {
         };
     }
     EquipmentService.prototype.updateEquipment = function (equipment) {
-        return this.http.put(this.equipmentBaseUrl + '/' + equipment.equipmentId, equipment)
-            .map(function (res) { return res.json(); })
-            .catch(this.handleError);
+        return this.http.put(this.equipmentBaseUrl + '/' + equipment.equipmentId, equipment).map(function (res) { return res.json(); }).catch(this.handleError);
     };
     EquipmentService.prototype.createEquipment = function (equipment) {
-        return this.http.post(this.equipmentBaseUrl, equipment)
-            .map(function (res) { return res.json(); })
+        return this.http.post(this.equipmentBaseUrl, equipment).map(function (res) { return res.json(); }).catch(this.handleError);
+    };
+    EquipmentService.prototype.deleteEquipment = function (equipment) {
+        return this.http.delete(this.equipmentBaseUrl + '/' + equipment.equipmentId)
+            .toPromise()
+            .then(function () { return null; })
             .catch(this.handleError);
     };
     EquipmentService.prototype.extractData = function (res) {

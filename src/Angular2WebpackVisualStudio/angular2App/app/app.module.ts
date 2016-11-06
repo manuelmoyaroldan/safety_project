@@ -7,7 +7,9 @@ import { Configuration } from './app.constants';
 import { routing } from './app.routes';
 import { HttpModule, JsonpModule } from '@angular/http';
 
-import { HomeComponent } from './home/home.component';
+import { MaterialModule } from '@angular/material';
+
+import { HomeComponent } from './home/home.component'; 
 import { AboutComponent } from './about/about.component';
 import { EquipmentComponent } from './equipment/equipment.component'; 
 import { EquipmenttypeSelector } from './equipmenttype/equipmenttype.selector';
@@ -32,6 +34,7 @@ import { InputTextModule, DataTableModule, SharedModule, DropdownModule, DialogM
         HttpModule,
         CoreModule, //Singleton Objects
         JsonpModule, InputTextModule, DataTableModule, SharedModule, DropdownModule, DialogModule, ContextMenuModule //, InputTextModule, CalendarModule, CheckboxModule, PanelModule, DropdownModule, DataTableModule
+        , MaterialModule.forRoot()
     ],
     declarations: [
         AppComponent,

@@ -24,6 +24,13 @@
         </div>
     </div>
     <input type="text" pInputText [(ngModel)]="current.name" />{{current.name}}-->
+    <!--<button md-button>FLAT</button>
+    <md-card>
+        <md-checkbox>Unchecked</md-checkbox>
+        <md-checkbox [checked]="true">Checked</md-checkbox>
+        <md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+        <md-checkbox [disabled]="true">Disabled</md-checkbox>
+    </md-card>-->
     <p-dataTable [value]="equipments" 
                  selectionMode="single" 
                  [(selection)]="selected" 

@@ -5,8 +5,11 @@ import '@angular/common';
 import '@angular/forms';
 import '@angular/http';
 import '@angular/router';
+import '@angular/material';
+import '@angular/material/core/theming/prebuilt/deeppurple-amber.scss'; 
 
 import 'primeng/primeng';
+
 
 import 'rxjs/Rx';
 
