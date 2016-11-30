@@ -4,5 +4,9 @@
 //import './css/bootstrap.css';
 //import './css/bootstrap-theme.css';
 //import './css/assets/style.css';
+import 'primeng/primeng';
+
 import './css/assets/css/style.css';
+
+
 
