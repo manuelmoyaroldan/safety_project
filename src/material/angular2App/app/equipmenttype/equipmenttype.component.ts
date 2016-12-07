@@ -26,6 +26,7 @@ export class EquipmenttypeComponent implements OnInit {
     public list: any[] = [];
     public selected: any = {};
     public current: any = {};
+    public myfecha: any;
 
     public menu_items: MenuItem[];
     public show_dialog: boolean = false;
@@ -74,7 +75,9 @@ export class EquipmenttypeComponent implements OnInit {
         //}); 
 
         let config = new MdDialogConfig();
+
         config.viewContainerRef = this.viewContainerRef;
+
 
         this.dialogRef = this.dialog.open(EquipmenttypeDialog, config);
         this.dialogRef.componentInstance.jazzMessage = "holaaa";
@@ -141,9 +144,14 @@ export class EquipmenttypeComponent implements OnInit {
 @Component({
     selector: 'EquipmenttypeDialog',
     template: `
-  <p>It's Jazz!</p>
+<div>  
+<p>It's Jazz!</p>
   <p><label>How much? <input #howMuch></label></p>
   <p> {{ jazzMessage }} </p>
+<p-calendar [(ngModel)]="value"></p-calendar>
+<p> {{ jazzMessage }} </p>
+<p> {{ jazzMessage }} </p>
+<p> {{ jazzMessage }} </p>
 <p> {{ jazzMessage }} </p>
 <p> {{ jazzMessage }} </p>
 <p> {{ jazzMessage }} </p>
@@ -158,7 +166,11 @@ export class EquipmenttypeComponent implements OnInit {
 <p> {{ jazzMessage }} </p>
 <p> {{ jazzMessage }} </p>
 
-  <button type="button" (click)="dialogRef.close(howMuch.value)">Close dialog</button>`
+
+
+
+  <button type="button" (click)="dialogRef.close(howMuch.value)">Close dialog</button> </div>`
+    
 })
 export class EquipmenttypeDialog {
     jazzMessage = 'Jazzy jazz jazz';

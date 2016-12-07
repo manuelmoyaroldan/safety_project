@@ -47,7 +47,7 @@
     </p-dataTable>
     <p-contextMenu #cm [model]="items"></p-contextMenu>
     <button type="text" (click)="showDialog()" pButton icon="fa-external-link-square" label="Show"></button>
-    <!--{{selected ? selected.name : any}}-->
+    {{selected ? selected.name : any}}
     <p-dialog [(visible)]="display" modal="true" responsive="true">
         <header>
             Header content here

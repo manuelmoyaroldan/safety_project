@@ -5585,7 +5585,7 @@ body:not(.top-nav) .sidebar {
           line-height: 0.65625rem;
           text-align: center;
           content: "\2039";
-          transition: .3s; }
+          transition: .5s; }
         ul.nav li.nav-item.nav-dropdown.open {
         background: rgba(0, 0, 0, 0.2); }
           ul.nav li.nav-item.nav-dropdown.open > ul,   ul.nav li.nav-item.nav-dropdown.open > ol {
