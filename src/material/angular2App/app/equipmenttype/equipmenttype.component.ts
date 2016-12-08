@@ -34,11 +34,11 @@ export class EquipmenttypeComponent implements OnInit {
     constructor(private _Service: EquipmenttypeService, private viewContainerRef: ViewContainerRef, private dialog: MdDialog) { }
 
     ngOnInit(): void {
-        //this._Service
-        //    .getAll()
-        //    .subscribe(data => this.list = data,
-        //    error => console.log(error),
-        //    () => console.log('Get all completed.'));
+        this._Service
+            .getAll()
+            .subscribe(data => this.list = data,
+            error => console.log(error),
+            () => console.log('Get all completed.'));
 
         this.menu_items = [
             { label: 'Edit', icon: 'fa-edit', command: (event: any) => this.click_Edit() },

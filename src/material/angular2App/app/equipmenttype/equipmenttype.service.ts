@@ -10,7 +10,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class EquipmenttypeService {
 
-    BaseUrl: string = 'http://localhost:24785/api/equipmenttype';
+    BaseUrl: string = 'http://localhost:58333/api/equipmenttype';
 
     constructor(private _http: Http) {
     }

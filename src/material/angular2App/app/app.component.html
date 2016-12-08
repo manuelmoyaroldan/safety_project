@@ -18,9 +18,9 @@
                         </li>
                         <li class="divider"></li>
                         <li class="nav-title">
-                            UI Elements
+                            CRASH
                         </li>
-                        <li class="nav-item nav-dropdown" routerLinkActive="open">
+                        <!--<li class="nav-item nav-dropdown" routerLinkActive="open">
                             <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> Components</a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
@@ -56,21 +56,21 @@
                                     <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/simple-line-icons']"><i class="icon-star"></i> Simple Line Icons</a>
                                 </li>
                             </ul>
+                        </li>-->
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets']"><i class="icon-calculator"></i> Crash List <span class="tag tag-info">NEW</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets']"><i class="icon-calculator"></i> Widgets <span class="tag tag-info">NEW</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/charts']"><i class="icon-pie-chart"></i> Charts</a>
+                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/charts']"><i class="icon-pie-chart"></i> New Crash</a>
                         </li>
                         <li class="divider"></li>
                         <li class="nav-title">
-                            Admin
+                            OTHERS
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" routerLinkActive="active" [routerLink]="['/equipmenttype']"><i class="icon-pie-chart"></i> Equipment Type</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" routerLinkActive="active" [routerLink]="['/costcenter']"><i class="icon-pie-chart"></i> Cost Center</a>
                         </li>
                         <li class="nav-item">
@@ -87,11 +87,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" routerLinkActive="active" [routerLink]="['/travelphase']"><i class="icon-pie-chart"></i> TravelPhase</a>
-                        </li>
+                        </li>-->
 
 
 
-                        <li class="nav-item nav-dropdown">
+                        <!--<li class="nav-item nav-dropdown">
 
                             <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i> Pages</a>
                             <ul class="nav-dropdown-items">
@@ -108,14 +108,16 @@
                                     <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/500']"><i class="icon-star"></i> Error 500</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>-->
 
                     </ul>
                 </nav>
             <!--</div>-->
         </md-sidenav>
 
-        <router-outlet></router-outlet>
+        <div style="background-color: #EEEEEE; height: 100% ; padding: 10px;">
+            <router-outlet></router-outlet>
+        </div>
 
     </md-sidenav-layout>
 </div>
