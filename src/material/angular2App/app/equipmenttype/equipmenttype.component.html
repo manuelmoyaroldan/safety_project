@@ -1,28 +1,31 @@
 ﻿<div>
     <!--DataTable-->
-    
-    
-    <md-card >
+    <md-card>
         <md-card-header>
             <!--<img md-card-avatar src="path/to/img.png">-->
-            <md-icon md-card-avatar style="line-height:44px;">folder</md-icon>
-            <md-card-title>Equipment Type</md-card-title>
+            <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
+            <md-card-title style="padding-top: 14px;">EQUIPMENT TYPE</md-card-title>
             <!--<md-card-subtitle>Header subtitle</md-card-subtitle>-->
 
             <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
-            
-                <button md-icon-button [md-menu-trigger-for]="menu">
-                    <md-icon>more_vert</md-icon>
-                    <!--<md-icon fontSet="fa" fontIcon="fa-ellipsis-v"></md-icon>-->
+
+            <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="list options" tooltip-position="below">
+                <md-icon>more_vert</md-icon>
+                <!--<md-icon fontSet="fa" fontIcon="fa-ellipsis-v"></md-icon>-->
+            </button>
+
+            <md-menu x-position="before" #menu="mdMenu">
+                <button md-menu-item>
+                    <md-icon style="color: #757575;"> refresh </md-icon>
+                    <span> Refresh </span>
+                </button>
+                <button md-menu-item (click)="click_Add()">
+                    <md-icon style="color: #757575;"> add </md-icon>
+                    <span> Add </span>
                 </button>
 
-                <md-menu x-position="before" #menu="mdMenu">
-                    <button md-menu-item> Refresh </button>
-                    <button md-menu-item> Settings </button>
-                    <button md-menu-item> Help </button>
-                    <button md-menu-item disabled> Sign Out </button>
-                </md-menu>
-            
+            </md-menu>
+
             <!--<md-divider></md-divider>-->
         </md-card-header>
         <md-divider></md-divider>
@@ -45,15 +48,63 @@
                 <p-column field="isActive" header="Active"></p-column>
             </p-dataTable>
             <p-contextMenu #cm [model]="menu_items"></p-contextMenu>-->
+            <!--<md-list>
+                <h3 md-subheader>Folders</h3>
+                <md-list-item *ngFor="let item of list">
+                    <md-icon md-list-avatar>folder</md-icon>
+                    <div>
+                        <div md-line><span>{{item.name}}</span><span>test</span></div>
+                        <p md-line class="demo-2"> {{item.isActive?'Enabled':'Disabled'}} </p>
+                    </div>
+                    <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+                    <div><div md-line><md-icon md-list-avatar>folder</md-icon><md-icon md-list-avatar>folder</md-icon></div></div>
+                </md-list-item>
+                <md-divider></md-divider>
+            </md-list>-->
             <md-list>
                 <!--<h3 md-subheader>Folders</h3>-->
                 <md-list-item *ngFor="let item of list">
-                    <md-icon md-list-avatar>folder</md-icon>
-                    <div md-line><span>{{item.name}}</span><span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span><span>test</span></div>
-                    <p md-line class="demo-2"> {{item.isActive?'Enabled':'Disabled'}} </p>
+                    <!--<button md-icon-button>
+                        <md-icon>info</md-icon>
+                    </button>-->
+                    <!--<md-icon>folder</md-icon>-->
+                    <md-icon md-list-avatar style="padding-top: 10px;color: lightgray;">label_outline</md-icon>
+                    <!--<div md-list-text>-->
+                    <div md-line><span>{{item.name}}</span></div>
+                    <p md-line> {{item.isActive?'Enabled':'Disabled'}} </p>
+                    <!--</div>-->
+                    <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+                    <button md-icon-button md-tooltip="edit item" tooltip-position="below">
+                        <md-icon style="color: #757575;">edit</md-icon>
+                    </button>
+                    <button md-icon-button md-tooltip="delete item" tooltip-position="below">
+                        <md-icon style="color: #757575;">delete</md-icon>
+                    </button>
+                    <button md-icon-button md-tooltip="delete item" tooltip-position="below">
+                        <md-icon style="color: #757575;">delete_forever</md-icon>
+                    </button>
+                    <!--<div><div md-line><md-icon md-list-avatar>folder</md-icon><md-icon md-list-avatar>folder</md-icon></div></div>-->
                 </md-list-item>
                 <md-divider></md-divider>
             </md-list>
+
+            <!--<p-dataList [value]="list" [paginator]="false" >
+                <template let-item>
+                    <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:16px;padding:20px;border-bottom:1px solid #D5D5D5;">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-3" style="text-align:center"><i class="fa fa-search" (click)="selectCar(car)" style="cursor:pointer;float:left;margin-top:40px"></i><img src="showcase/resources/demo/images/car/{{car.brand}}-big.gif"></div>
+                            <div class="ui-grid-col-9">
+                                <div class="ui-grid ui-grid-responsive ui-fluid">
+                                    <div class="ui-grid-row">
+                                        <div class="ui-grid-col-2">Name </div>
+                                        <div class="ui-grid-col-10">{{item.name}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </p-dataList>-->
             <!--<form>
                 <md-input class="demo-full-width" placeholder="Company (disabled)" disabled value="Google">
                 </md-input>
@@ -86,6 +137,7 @@
             </form>-->
         </md-card-content>
     </md-card>
+
     {{lastCloseResult}}
     <!--Dialog-->
     <!--<p-dialog [(visible)]="show_dialog" modal="true" responsive="true" draggable="false" resizable="false">
@@ -112,6 +164,6 @@
             </div>
         </footer>
     </p-dialog>-->
-    
-   
+
+
 </div> 
