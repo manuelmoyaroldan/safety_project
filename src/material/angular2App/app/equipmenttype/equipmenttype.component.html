@@ -2,16 +2,15 @@
     <!--DataTable-->
     
     
-    <md-card class="demo-card demo-basic">
-        <!--<md-toolbar color="primary">Basic</md-toolbar>-->
+    <md-card >
         <md-card-header>
             <!--<img md-card-avatar src="path/to/img.png">-->
-            <span>
-                <md-card-title>Equipment Type</md-card-title>
-                <md-card-subtitle>List</md-card-subtitle>
-            </span>
+            <md-icon md-card-avatar style="line-height:44px;">folder</md-icon>
+            <md-card-title>Equipment Type</md-card-title>
+            <!--<md-card-subtitle>Header subtitle</md-card-subtitle>-->
+
             <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
-            <span>
+            
                 <button md-icon-button [md-menu-trigger-for]="menu">
                     <md-icon>more_vert</md-icon>
                     <!--<md-icon fontSet="fa" fontIcon="fa-ellipsis-v"></md-icon>-->
@@ -23,10 +22,13 @@
                     <button md-menu-item> Help </button>
                     <button md-menu-item disabled> Sign Out </button>
                 </md-menu>
-            </span>
+            
+            <!--<md-divider></md-divider>-->
         </md-card-header>
+        <md-divider></md-divider>
         <md-card-content>
-            <p-dataTable [value]="list"
+            <!--<md-divider></md-divider>-->
+            <!--<p-dataTable [value]="list"
                          selectionMode="single"
                          [(selection)]="selected"
                          scrollable="true"
@@ -42,7 +44,16 @@
                 <p-column field="name" header="Name"></p-column>
                 <p-column field="isActive" header="Active"></p-column>
             </p-dataTable>
-            <p-contextMenu #cm [model]="menu_items"></p-contextMenu>
+            <p-contextMenu #cm [model]="menu_items"></p-contextMenu>-->
+            <md-list>
+                <!--<h3 md-subheader>Folders</h3>-->
+                <md-list-item *ngFor="let item of list">
+                    <md-icon md-list-avatar>folder</md-icon>
+                    <div md-line><span>{{item.name}}</span><span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span><span>test</span></div>
+                    <p md-line class="demo-2"> {{item.isActive?'Enabled':'Disabled'}} </p>
+                </md-list-item>
+                <md-divider></md-divider>
+            </md-list>
             <!--<form>
                 <md-input class="demo-full-width" placeholder="Company (disabled)" disabled value="Google">
                 </md-input>
