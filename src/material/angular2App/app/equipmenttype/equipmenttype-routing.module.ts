@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 //import { MaterialModule } from '@angular/material';
 
-import { EquipmenttypeComponent, EquipmenttypeDialog } from './equipmenttype.component';
+import { EquipmenttypeComponent } from './equipmenttype.component';
 
 const routes: Routes = [
     {

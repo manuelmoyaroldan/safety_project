@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 
 import { EquipmenttypeService } from './equipmenttype.service';
+import { EquipmenttypeDialog } from './equipmenttype.dialog';
 
 import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
 
@@ -81,6 +82,7 @@ export class EquipmenttypeComponent implements OnInit {
 
         this.dialogRef = this.dialog.open(EquipmenttypeDialog, config);
         this.dialogRef.componentInstance.jazzMessage = "holaaa";
+        this.dialogRef.componentInstance.current = {};
 
         this.dialogRef.afterClosed().subscribe(result => {
             this.lastCloseResult = result;
@@ -141,40 +143,3 @@ export class EquipmenttypeComponent implements OnInit {
 }
 
 
-@Component({
-    selector: 'EquipmenttypeDialog',
-    template: `
-<div>  
-<p>It's Jazz!</p>
-  <p><label>How much? <input #howMuch></label></p>
-  <p> {{ jazzMessage }} </p>
-<p-calendar [(ngModel)]="value"></p-calendar>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-<p> {{ jazzMessage }} </p>
-
-
-
-
-  <button type="button" (click)="dialogRef.close(howMuch.value)">Close dialog</button> </div>`
-    
-})
-export class EquipmenttypeDialog {
-    jazzMessage = 'Jazzy jazz jazz';
-
-    constructor(public dialogRef: MdDialogRef<EquipmenttypeDialog>) {
-    }
-}

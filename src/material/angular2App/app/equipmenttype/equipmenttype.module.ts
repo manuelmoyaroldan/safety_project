@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from  '@angular/material';
 
-import { EquipmenttypeComponent, EquipmenttypeDialog } from './equipmenttype.component';
+import { EquipmenttypeComponent} from './equipmenttype.component';
+import { EquipmenttypeDialog } from './equipmenttype.dialog';
 import { EquipmenttypeRoutingModule } from './equipmenttype-routing.module';
 
 import { DataListModule, DataTableModule, ContextMenuModule, MenuItem, DialogModule, ButtonModule, DropdownModule, CalendarModule } from 'primeng/primeng';
@@ -24,6 +25,7 @@ import { DataListModule, DataTableModule, ContextMenuModule, MenuItem, DialogMod
         , CalendarModule
     ],
     declarations: [EquipmenttypeComponent, EquipmenttypeDialog],
+    exports: [EquipmenttypeDialog],
     entryComponents: [EquipmenttypeDialog]
 
 })
