@@ -16,47 +16,141 @@ namespace api_safety.Controllers
     {
         private safetyContext _context;
         private ILogger _logger;
-
         public equipmenttypeController(safetyContext context, ILoggerFactory loggerFactory)
         {
             _context = context;
-            _logger = loggerFactory.CreateLogger<equipmentController>();
+            _logger = loggerFactory.CreateLogger<equipmenttypeController>();
         }
 
-        // GET: api/values
+        //--------------------- GET: api/values
         [HttpGet]
         public IEnumerable<equipmenttype> Get()
         {
-            var equipmenttypes = _context.equipmenttype.ToList<equipmenttype>();
+            var list = _context.equipmenttype.ToList<equipmenttype>();
 
-            _logger.LogInformation(equipmenttypes.Count.ToString());
+            _logger.LogInformation(list.Count.ToString());
 
-            return equipmenttypes.ToList<equipmenttype>();
+            return list;
         }
 
-        // GET api/values/5
+        //--------------------- GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            var equipmenttype = _context.equipmenttype.Where(c => c.equipmenttypeId == id).FirstOrDefault<equipmenttype>();
+
+            if (equipmenttype != null)
+            {
+                return Ok(equipmenttype);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
-        // POST api/values
+        //--------------------- POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]equipmenttype value)
         {
+            var equipmenttype = new equipmenttype();
+
+            equipmenttype.equipmenttypeId = value.equipmenttypeId;
+            equipmenttype.name = value.name;
+            equipmenttype.isActive = true;
+
+            _context.equipmenttype.Add(equipmenttype);
+            _context.SaveChanges();
+
+            var send = _context.equipmenttype.Where(c => c.equipmenttypeId == equipmenttype.equipmenttypeId).FirstOrDefault<equipmenttype>();
+
+            return Ok(send);
         }
 
-        // PUT api/values/5
+        //--------------------- PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put(int id, [FromBody]equipmenttype value)
         {
+            var equipmenttype = _context.equipmenttype.Where(c => c.equipmenttypeId == id).FirstOrDefault<equipmenttype>();
+
+            if (equipmenttype != null)
+            {
+                equipmenttype.name = value.name;
+
+                _context.SaveChanges();
+
+                var send = _context.equipmenttype.Where(c => c.equipmenttypeId == equipmenttype.equipmenttypeId).FirstOrDefault<equipmenttype>();
+
+                return Ok(send);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DEACTIVATE
+        [Route("deactivate/{id}")]
+        [HttpPut()]
+        public IActionResult deactivate(int id, [FromBody]equipmenttype value)
         {
+            var equipmenttype = _context.equipmenttype.Where(c => c.equipmenttypeId == id).FirstOrDefault<equipmenttype>();
+
+            if (equipmenttype != null)
+            {
+                equipmenttype.isActive = false;
+
+                _context.SaveChanges();
+
+                return Ok(equipmenttype);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
+
+        // DEACTIVATE
+        [Route("activate/{id}")]
+        [HttpPut()]
+        public IActionResult activate(int id, [FromBody]equipmenttype value)
+        {
+            var equipmenttype = _context.equipmenttype.Where(c => c.equipmenttypeId == id).FirstOrDefault<equipmenttype>();
+
+            if (equipmenttype != null)
+            {
+                equipmenttype.isActive = true;
+
+                _context.SaveChanges();
+
+                return Ok(equipmenttype);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
+
+        //--------------------- DELETE api/values/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var equipmenttype = _context.equipmenttype.Where(c => c.equipmenttypeId == id).FirstOrDefault<equipmenttype>();
+
+            if (equipmenttype != null)
+            {
+                _context.Remove(equipmenttype);
+
+                _context.SaveChanges();
+
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

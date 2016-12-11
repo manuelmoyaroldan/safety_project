@@ -2,7 +2,7 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { MaterialModule } from  '@angular/material';
+import { MaterialModule, MdSnackBar } from '@angular/material';
 
 import { EquipmenttypeComponent} from './equipmenttype.component';
 import { EquipmenttypeDialog } from './equipmenttype.dialog';

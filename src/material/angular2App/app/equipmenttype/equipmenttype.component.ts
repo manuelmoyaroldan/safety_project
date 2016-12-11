@@ -42,7 +42,7 @@ export class EquipmenttypeComponent implements OnInit {
             () => console.log('Get all completed.'));
 
         this.menu_items = [
-            { label: 'Edit', icon: 'fa-edit', command: (event: any) => this.click_Edit() },
+            //{ label: 'Edit', icon: 'fa-edit', command: (event: any) => this.click_Edit() },
             { label: 'Activate', icon: 'fa-check-circle-o', command: (event: any) => this.activate() },
             { label: 'DeActivate', icon: 'fa-circle-o', command: (event: any) => this.deactivate() },
             { label: 'Delete', icon: 'fa-close', command: (event: any) => this.delete() }
@@ -56,11 +56,35 @@ export class EquipmenttypeComponent implements OnInit {
         this.selected = {};
     }
 
-    click_Edit() {
+    click_Edit(valueRec: any) {
         //this.current = Object.assign({}, this.selected);
-        this.current = JSON.parse(JSON.stringify(this.selected));
+        
+        this.current = valueRec;
+        //this.current = JSON.parse(JSON.stringify(valueRec));
+        this.open_Dialog(this.current);
 
-        this.show_dialog = true;
+        //this.show_dialog = true;
+    }
+
+    open_Dialog(valueRec: any) {
+        let config = new MdDialogConfig();
+
+        config.viewContainerRef = this.viewContainerRef;
+
+        this.dialogRef = this.dialog.open(EquipmenttypeDialog, config);
+        this.dialogRef.componentInstance.current = JSON.parse(JSON.stringify(valueRec));
+
+        this.dialogRef.afterClosed().subscribe(result => {
+            if (result != undefined) {
+                if (this.current.equipmenttypeId != undefined) { //Edit
+                    Object.assign(valueRec, result);
+                } else { //Add
+                    this.list.push(result);
+                }
+            }
+            this.dialogRef = null;
+        });
+
     }
 
     click_Add(event: any) {
@@ -75,21 +99,21 @@ export class EquipmenttypeComponent implements OnInit {
         //    this.dialogRef = null;
         //}); 
 
-        let config = new MdDialogConfig();
+        //let config = new MdDialogConfig();
 
-        config.viewContainerRef = this.viewContainerRef;
+        //config.viewContainerRef = this.viewContainerRef;
 
 
-        this.dialogRef = this.dialog.open(EquipmenttypeDialog, config);
-        this.dialogRef.componentInstance.jazzMessage = "holaaa";
-        this.dialogRef.componentInstance.current = {};
+        //this.dialogRef = this.dialog.open(EquipmenttypeDialog, config);
+        //this.dialogRef.componentInstance.jazzMessage = "holaaa";
+        //this.dialogRef.componentInstance.current = {};
 
-        this.dialogRef.afterClosed().subscribe(result => {
-            this.lastCloseResult = result;
-            this.dialogRef = null;
-        });
-        
-        
+        //this.dialogRef.afterClosed().subscribe(result => {
+        //    this.lastCloseResult = result;
+        //    this.dialogRef = null;
+        //});
+        this.current = {};
+        this.open_Dialog(this.current);
     }
 
     onCancel(event: any) {

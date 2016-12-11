@@ -74,7 +74,7 @@
                     <p md-line> {{item.isActive?'Enabled':'Disabled'}} </p>
                     <!--</div>-->
                     <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
-                    <button md-icon-button md-tooltip="edit item" tooltip-position="below">
+                    <button md-icon-button md-tooltip="edit item" (click)="click_Edit(item)" tooltip-position="below">
                         <md-icon style="color: #757575;">edit</md-icon>
                     </button>
                     <button md-icon-button md-tooltip="delete item" tooltip-position="below">
