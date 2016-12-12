@@ -49,27 +49,11 @@ export class EquipmenttypeComponent implements OnInit {
         ];
     }
 
-    onRowSelect(event: any) {
-    }
-
-    onRowUnselect(event: any) {
-        this.selected = {};
-    }
-
-    click_Edit(valueRec: any) {
-        //this.current = Object.assign({}, this.selected);
-        
-        this.current = valueRec;
-        //this.current = JSON.parse(JSON.stringify(valueRec));
-        this.open_Dialog(this.current);
-
-        //this.show_dialog = true;
-    }
-
     open_Dialog(valueRec: any) {
         let config = new MdDialogConfig();
 
         config.viewContainerRef = this.viewContainerRef;
+        config.height = '80%';
 
         this.dialogRef = this.dialog.open(EquipmenttypeDialog, config);
         this.dialogRef.componentInstance.current = JSON.parse(JSON.stringify(valueRec));
@@ -116,8 +100,63 @@ export class EquipmenttypeComponent implements OnInit {
         this.open_Dialog(this.current);
     }
 
+    click_Edit(valueRec: any) {
+        //this.current = Object.assign({}, this.selected);
+        
+        this.current = valueRec;
+        //this.current = JSON.parse(JSON.stringify(valueRec));
+        this.open_Dialog(this.current);
+
+        //this.show_dialog = true;
+    }
+
+    click_DeActivate(valueRec: any) {
+        this._Service.deactivate(valueRec)
+            .subscribe((status: any) => {
+                if (status) {
+                    console.log("updated");
+                    valueRec.isActive = false;
+                }
+                else {
+                    console.log("update error");
+                }
+            });
+    }
+
+    click_Activate(valueRec: any) {
+        this._Service.activate(valueRec)
+            .subscribe((status: any) => {
+                if (status) {
+                    console.log("updated");
+                    valueRec.isActive = true;
+                }
+                else {
+                    console.log("update error");
+                }
+            });
+
+    }
+
+    click_Delete(valueRec: any) {
+        this._Service
+            .delete(valueRec)
+            .then(() => {
+                this.list = this.list.filter(h => h.equipmenttypeId !== valueRec.equipmenttypeId);
+                this.selected = {};
+            });
+    }
+
+
+    /**primeng*/
     onCancel(event: any) {
         this.show_dialog = false;
+    }
+
+    onRowSelect(event: any) {
+    }
+
+    onRowUnselect(event: any) {
+        this.selected = {};
     }
 
     onSubmit() {
