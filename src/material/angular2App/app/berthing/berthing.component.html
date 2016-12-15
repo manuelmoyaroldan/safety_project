@@ -1,0 +1,38 @@
+﻿<div>
+    <div style="width:100%;height:300px">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <!--<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />-->
+            <rect width="80" height="80" x="8" y="8" style="fill:lightgray;stroke-width:3;stroke:rgb(0,0,0)">
+            </rect>
+            <text x="18" y="18" fill="blue" style="font-size:8px;">TEST</text>
+            <defs>
+                <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
+                    <path d="M 8 0 L 0 0 0 8" fill="none" stroke="gray" stroke-width="0.5" />
+                </pattern>
+                <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                    <rect width="80" height="80" fill="url(#smallGrid)" />
+                    <path d="M 80 0 L 0 0 0 80" fill="none" stroke="gray" stroke-width="1" />
+                </pattern>
+            </defs>
+
+            <rect width="100%" height="100%" fill="url(#grid)" />
+            <g (click)="testclick()">
+                <!--<rect [attr.x]="posicionx" [attr.y]="posiciony" width="100" height="100" fill="lightgray" (click)="testclick()"></rect>-->
+                <rect [attr.x]="posicionx" [attr.y]="posiciony" width="100" height="100" fill="lightgray" ></rect>
+                <text [attr.x]="posicionx" [attr.y]="posiciony" font-family="Verdana" font-size="8" fill="blue"> TEXT</text>
+            </g>
+
+        </svg>
+    </div>
+    <md-card class="demo-card demo-basic">
+        <md-card-content>
+            <table style="width: 100%" cellspacing="0">
+                <tr>
+                    <td><md-input [(ngModel)]="posicionx" placeholder="X" style="width: 100%" [ngModelOptions]="{standalone: true}"></md-input></td>
+                    <td><md-input [(ngModel)]="posiciony" placeholder="Y" style="width: 100%" [ngModelOptions]="{standalone: true}"></md-input></td>
+                </tr>
+            </table>
+        </md-card-content>
+    </md-card>
+
+</div>

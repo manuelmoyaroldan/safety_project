@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
 
     public message: string;
     public values: any[];
+    public posicionx: any = 10;
+    public posiciony: any = 10;
 
     constructor(private _dataService: TestDataService) {
         this.message = "Hello from HomeComponent constructor";
@@ -26,5 +28,9 @@ export class HomeComponent implements OnInit {
             error => console.log(error),
             () => console.log('Get all complete')
             );
+    }
+
+    testclick() {
+        window.alert("click");
     }
 }
