@@ -31,6 +31,8 @@ export class BerthingComponent implements OnInit {
 
     public posicionx: any = 10;
     public posiciony: any = 10;
+    public list: any[] = [{ posicionx: 10, posiciony: 10, id: 1, name: 'RIO BLANCO' }, { posicionx: 100, posiciony: 10, id: 2, name: 'MAERSK LOTA' }];
+    public selected: any;
 
 
     //public menu_items: MenuItem[];
@@ -53,8 +55,9 @@ export class BerthingComponent implements OnInit {
         //];
     }
 
-    testclick() {
-        window.alert("click");
+    testclick(value: any) {
+        this.selected = value.id;
+        //window.alert(value.name);
     }
 
     //open_Dialog(valueRec: any) {

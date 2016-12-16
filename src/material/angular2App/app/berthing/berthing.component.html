@@ -1,27 +1,31 @@
 ﻿<div>
     <div style="width:100%;height:300px">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/tr/svg2">
             <!--<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />-->
-            <rect width="80" height="80" x="8" y="8" style="fill:lightgray;stroke-width:3;stroke:rgb(0,0,0)">
-            </rect>
-            <text x="18" y="18" fill="blue" style="font-size:8px;">TEST</text>
+            <!--<rect width="80" height="80" x="8" y="8" style="fill:lightgray;stroke-width:3;stroke:rgb(0,0,0)"></rect>
+            <text x="18" y="18" fill="blue" style="font-size:8px;">TEST</text>-->
             <defs>
-                <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
-                    <path d="M 8 0 L 0 0 0 8" fill="none" stroke="gray" stroke-width="0.5" />
+                <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="gray" stroke-width="0.5" />
                 </pattern>
-                <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
-                    <rect width="80" height="80" fill="url(#smallGrid)" />
-                    <path d="M 80 0 L 0 0 0 80" fill="none" stroke="gray" stroke-width="1" />
+                <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <rect width="100" height="100" fill="url(#smallGrid)" />
+                    <path d="M 100 0 L 0 0 0 100" fill="none" stroke="gray" stroke-width="1" />
                 </pattern>
             </defs>
-
             <rect width="100%" height="100%" fill="url(#grid)" />
-            <g (click)="testclick()">
-                <!--<rect [attr.x]="posicionx" [attr.y]="posiciony" width="100" height="100" fill="lightgray" (click)="testclick()"></rect>-->
+            <!--<g (click)="testclick()">
                 <rect [attr.x]="posicionx" [attr.y]="posiciony" width="100" height="100" fill="lightgray" ></rect>
-                <text [attr.x]="posicionx" [attr.y]="posiciony" font-family="Verdana" font-size="8" fill="blue"> TEXT</text>
+                <text [attr.x]="posicionx" [attr.y]="posiciony+10" font-family="Verdana" font-size="8" fill="blue"> TEXT</text>
+                <text [attr.x]="posicionx" [attr.y]="posiciony+20" font-family="Verdana" font-size="8" fill="blue"> TEXT 2</text>
+            </g>-->
+            <g *ngFor="let item of list" (click)="testclick(item)" [attr.z-index]="selected==item.id?40:1" >
+                <!--<rect [attr.x]="item.posicionx" [attr.y]="item.posiciony" width="100" height="100" fill="lightgray" [attr.stroke-width]="selected==item.id?1:0.5" stroke="black" [attr.style]="selected==item.id?'z-index: 20;':'z-index: 1;'" ></rect>-->
+                <rect [attr.x]="item.posicionx" [attr.y]="item.posiciony" width="100" height="100" fill="lightgray" [attr.stroke-width]="selected==item.id?1:0.5" stroke="black" ></rect>
+                <text [attr.x]="item.posicionx" [attr.y]="item.posiciony+10" font-family="Verdana" font-size="8" font-weight="700" fill="black"> {{item.name}}</text>
+                <text [attr.x]="item.posicionx" [attr.y]="item.posiciony+20" font-family="Verdana" font-size="8" font-weight="300" fill="black" > TEXT 2</text>
             </g>
-
+            <!--<rect width="8" height="8" x="0" y="0" style="fill:blue;stroke-width:1;stroke:rgb(0,0,0)"></rect>-->
         </svg>
     </div>
     <md-card class="demo-card demo-basic">
@@ -34,5 +38,6 @@
             </table>
         </md-card-content>
     </md-card>
+    {{selected}}
 
 </div>
