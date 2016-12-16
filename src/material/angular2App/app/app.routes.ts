@@ -8,6 +8,10 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     {
+        path: 'equipment',
+        loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./equipment/equipment.module')['EquipmentModule']); }); })
+    },
+    {
         path: 'equipmenttype',
         loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./equipmenttype/equipmenttype.module')['EquipmenttypeModule']); }); })
     },

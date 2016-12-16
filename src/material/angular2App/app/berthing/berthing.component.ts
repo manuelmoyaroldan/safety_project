@@ -1,7 +1,11 @@
 ﻿import { Observable } from 'rxjs/Observable';
-import { Component, ViewContainerRef, OnInit } from '@angular/core';
+import { Component, ViewContainerRef, OnInit, ElementRef } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
+
+//import { D3Service, D3, Selection } from 'd3-ng2-service'; // <-- import the D3 Service, the type alias for the d3 variable and the Selection interface
+
+
 
 import { BerthingService } from './berthing.service';
 import { BerthingDialog } from './berthing.dialog';
