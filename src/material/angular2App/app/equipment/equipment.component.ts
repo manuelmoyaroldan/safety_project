@@ -42,7 +42,7 @@ export class EquipmentComponent implements OnInit {
             () => console.log('Get all completed.'));
 
         this.menu_items = [
-            //{ label: 'Edit', icon: 'fa-edit', command: (event: any) => this.click_Edit() },
+            { label: 'Edit', icon: 'fa-edit', command: (event: any) => this.click_Edit(this.selected) },
             { label: 'Activate', icon: 'fa-check-circle-o', command: (event: any) => this.activate() },
             { label: 'DeActivate', icon: 'fa-circle-o', command: (event: any) => this.deactivate() },
             { label: 'Delete', icon: 'fa-close', command: (event: any) => this.delete() }
@@ -146,13 +146,13 @@ export class EquipmentComponent implements OnInit {
             });
     }
 
-
     /**primeng*/
     onCancel(event: any) {
         this.show_dialog = false;
     }
 
     onRowSelect(event: any) {
+        this.selected = event.data;
     }
 
     onRowUnselect(event: any) {

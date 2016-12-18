@@ -1,7 +1,6 @@
 ﻿<div>
     <md-card>
         <md-card-header>
-
             <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
             <md-card-title style="padding-top: 14px;">EQUIPMENT</md-card-title>
 
@@ -20,12 +19,32 @@
                     <md-icon style="color: #757575;"> add </md-icon>
                     <span> Add </span>
                 </button>
-
             </md-menu>
         </md-card-header>
         <md-divider></md-divider>
         <md-card-content>
-            <md-list>
+            <p-dataTable [value]="list"
+                         selectionMode="single"
+                         [(selection)]="selected"
+                         scrollable="true"
+                         scrollHeight="200px"
+                         [contextMenu]="cm"
+                         (onRowSelect)="onRowSelect($event)"
+                         (onRowUnselect)="onRowUnselect($event)"
+                         #dt>
+                <!--<header>User List</header>
+                <footer></footer>-->
+                <p-column field="equipmentId" header="Id"></p-column>
+                <p-column field="name" header="Name"></p-column>
+                <p-column field="equipmenttype" header="Type">
+                    <template let-col let-item="rowData" pTemplate type="body">
+                        <span>{{item.equipmenttype?item.equipmenttype.name:any}}</span>
+                    </template>
+                </p-column>
+                <p-column field="isActive" header="Active"></p-column>
+            </p-dataTable>
+            <p-contextMenu #cm [model]="menu_items"  appendTo="body"></p-contextMenu>
+            <!--<md-list>
                 <md-list-item *ngFor="let item of list">
                     <md-icon md-list-avatar style="padding-top: 10px;color: lightgray;">label_outline</md-icon>
                     <div md-line><span>{{item.name}} {{item.equipmenttype?item.equipmenttype.name:'--'}}</span></div>
@@ -45,7 +64,7 @@
                     </button>
                 </md-list-item>
                 <md-divider></md-divider>
-            </md-list>
+            </md-list>-->
         </md-card-content>
     </md-card>
 

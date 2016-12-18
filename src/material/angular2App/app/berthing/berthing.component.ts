@@ -33,6 +33,7 @@ export class BerthingComponent implements OnInit {
     //public current: any = {};
     //public myfecha: any;
 
+    public x: any = 780;
     public posicionx: any = 10;
     public posiciony: any = 10;
     public list: any[] = [{ posicionx: 10, posiciony: 10, id: 1, name: 'RIO BLANCO' }, { posicionx: 100, posiciony: 10, id: 2, name: 'MAERSK LOTA' }];
