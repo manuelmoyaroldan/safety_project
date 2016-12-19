@@ -6,6 +6,7 @@ import { MaterialModule, MdSnackBar } from '@angular/material';
 
 import { EquipmenttypeComponent} from './equipmenttype.component';
 import { EquipmenttypeDialog } from './equipmenttype.dialog';
+import { EquipmenttypeSelector } from './equipmenttype.selector';
 import { EquipmenttypeRoutingModule } from './equipmenttype-routing.module';
 
 import { DataListModule, DataTableModule, ContextMenuModule, MenuItem, DialogModule, ButtonModule, DropdownModule, CalendarModule } from 'primeng/primeng';
@@ -24,8 +25,8 @@ import { DataListModule, DataTableModule, ContextMenuModule, MenuItem, DialogMod
         , DropdownModule
         , CalendarModule
     ],
-    declarations: [EquipmenttypeComponent, EquipmenttypeDialog],
-    exports: [EquipmenttypeDialog],
+    declarations: [EquipmenttypeComponent, EquipmenttypeDialog, EquipmenttypeSelector],
+    exports: [EquipmenttypeDialog, EquipmenttypeSelector],
     entryComponents: [EquipmenttypeDialog]
 
 })

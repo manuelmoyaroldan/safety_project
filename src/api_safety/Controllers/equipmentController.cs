@@ -54,7 +54,7 @@ namespace api_safety.Controllers
         {
             var equipment = new equipment();
 
-            equipment.equipmentId = value.equipmentId;
+            if (value.equipmenttype != null) equipment.equipmenttypeId = value.equipmenttype.equipmenttypeId;
             equipment.name = value.name;
             equipment.isActive = true;
 
@@ -74,6 +74,7 @@ namespace api_safety.Controllers
 
             if (equipment != null)
             {
+                if (value.equipmenttype != null) equipment.equipmenttypeId = value.equipmenttype.equipmenttypeId;
                 equipment.name = value.name;
 
                 _context.SaveChanges();
