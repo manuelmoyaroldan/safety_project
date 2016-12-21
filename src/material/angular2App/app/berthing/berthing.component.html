@@ -22,16 +22,34 @@
                 <text [attr.x]="posicionx" [attr.y]="posiciony+10" font-family="Verdana" font-size="8" fill="blue"> TEXT</text>
                 <text [attr.x]="posicionx" [attr.y]="posiciony+20" font-family="Verdana" font-size="8" fill="blue"> TEXT 2</text>
             </g>-->
-            <g *ngFor="let item of list" (click)="testclick(item)" [attr.z-index]="selected==item.id?40:1">
+            <g *ngFor="let item of list" (click)="testclick(item)" [attr.z-index]="selected==item.id?40:1" >
                 <!--<rect [attr.x]="item.posicionx" [attr.y]="item.posiciony" width="100" height="100" fill="lightgray" [attr.stroke-width]="selected==item.id?1:0.5" stroke="black" [attr.style]="selected==item.id?'z-index: 20;':'z-index: 1;'" ></rect>-->
                 <rect [attr.x]="item.posicionx" [attr.y]="item.posiciony" width="100" height="100" fill="lightgray" [attr.stroke-width]="selected==item.id?1:0.5" stroke="black"></rect>
-                <text [attr.x]="item.posicionx" [attr.y]="item.posiciony+10" font-family="Verdana" font-size="8" font-weight="700" fill="black"> {{item.name}}</text>
-                <text [attr.x]="item.posicionx" [attr.y]="item.posiciony+20" font-family="Verdana" font-size="8" font-weight="300" fill="black"> TEXT 2</text>
+                <text [attr.x]="item.posicionx+5" [attr.y]="item.posiciony+10" font-family="Verdana" font-size="8" font-weight="700" fill="black"> {{item.name}}</text>
+                <text [attr.x]="item.posicionx+5" [attr.y]="item.posiciony+20" font-family="Verdana" font-size="8" font-weight="300" fill="black"> {{item.service}}</text>
+                <text [attr.x]="item.posicionx+5" [attr.y]="item.posiciony+30" font-family="Verdana" font-size="8" font-weight="300" fill="black">ETB {{item.etbs}}</text>
+                <text [attr.x]="item.posicionx+5" [attr.y]="item.posiciony+40" font-family="Verdana" font-size="8" font-weight="300" fill="black">ETD {{item.etd}}</text>
+                <text [attr.x]="item.posicionx+5" [attr.y]="item.posiciony+50" font-family="Verdana" font-size="8" font-weight="300" fill="black"> {{item.moves}}</text>
+                <text [attr.x]="item.posicionx+5" [attr.y]="item.posiciony+60" font-family="Verdana" font-size="8" font-weight="300" fill="black"> {{item.gmph}}</text>
             </g>
             <!--<rect width="8" height="8" x="0" y="0" style="fill:blue;stroke-width:1;stroke:rgb(0,0,0)"></rect>-->
         </svg>
     </div>
-    <md-card class="demo-card demo-basic">
+    <div>
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/tr/svg2">
+            <defs>
+                <pattern id="smallGrid" width="16" height="8" patternUnits="userSpaceOnUse">
+                    <path d="M 16 0 L 0 0 0 8" fill="none" stroke="gray" stroke-width="0.5" />
+                </pattern>
+                <pattern id="grid" width="140" height="100" patternUnits="userSpaceOnUse">
+                    <rect width="140" height="100" fill="url(#smallGrid)" />
+                    <path d="M 140 0 L 0 0 0 150" fill="none" stroke="gray" stroke-width="1" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" y="15" fill="url(#grid)" />
+        </svg>
+    </div>
+    <!--<md-card class="demo-card demo-basic">
         <md-card-content>
             <table style="width: 100%" cellspacing="0">
                 <tr>
@@ -40,7 +58,7 @@
                 </tr>
             </table>
         </md-card-content>
-    </md-card>
-    {{selected}}
+    </md-card>-->
+    <p-calendar [(ngModel)]="basedate"></p-calendar>{{basedate}}      {{selected}}
 
 </div>
