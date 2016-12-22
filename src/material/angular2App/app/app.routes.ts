@@ -15,10 +15,13 @@ const appRoutes: Routes = [
         path: 'equipmenttype',
         loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./equipmenttype/equipmenttype.module')['EquipmenttypeModule']); }); })
     },
-
     {
         path: 'berthing',
         loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./berthing/berthing.module')['BerthingModule']); }); })
+    },
+    {
+        path: 'berthingd3',
+        loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./berthingd3/berthingd3.module')['Berthingd3Module']); }); })
     }
 
 ];
