@@ -3,6 +3,8 @@ import { Http, Response, Headers } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 
+import { Configuration } from '../app.constants';
+
 //import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
@@ -10,9 +12,10 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class EquipmenttypeService {
 
-    BaseUrl: string = 'http://localhost:58333/api/equipmenttype';
+    //BaseUrl: string = 'http://localhost:58333/api/equipmenttype';
+    BaseUrl: string = this._conf.Server + 'api/equipmenttype';
 
-    constructor(private _http: Http) {
+    constructor(private _http: Http, private _conf: Configuration) {
     }
 
     public getAll = (): Observable<any[]> => {

@@ -17,7 +17,7 @@
                 <nav class="sidebar-nav">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/Home']"><i class="icon-speedometer"></i> Home <span class="tag tag-info">NEW</span></a>
+                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']"><i class="icon-speedometer"></i> Home <span class="tag tag-info">NEW</span></a>
                         </li>
                         <li class="divider"></li>
                         <li class="nav-title">
@@ -130,6 +130,14 @@
 
         <div style="background-color: #EEEEEE; height: 100% ; padding: 10px;">
             <router-outlet></router-outlet>
+            <div class="loading-overlay" *ngIf="loading">
+                <!-- show something fancy here, here with Angular 2 Material's loading bar or circle -->
+                Cargando...
+            </div>
+            <div >
+                Cargando...
+            </div>
+
         </div>
 
     </md-sidenav-layout>

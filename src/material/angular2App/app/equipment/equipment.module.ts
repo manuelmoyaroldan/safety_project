@@ -4,7 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { MaterialModule, MdSnackBar } from '@angular/material';
 
-import { EquipmentComponent} from './equipment.component';
+import { Configuration } from '../app.constants';
+
+import { EquipmentComponent } from './equipment.component';
 import { EquipmentDialog } from './equipment.dialog';
 import { EquipmentRoutingModule } from './equipment-routing.module';
 
@@ -29,7 +31,8 @@ import { DataListModule, DataTableModule, ContextMenuModule, MenuItem, DialogMod
     ],
     declarations: [EquipmentComponent, EquipmentDialog],
     exports: [EquipmentDialog],
-    entryComponents: [EquipmentDialog]
+    entryComponents: [EquipmentDialog],
+    providers: [Configuration]
 
 })
 export class EquipmentModule { }
