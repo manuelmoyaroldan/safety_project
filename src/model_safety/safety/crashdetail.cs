@@ -8,6 +8,7 @@ namespace model_safety.safety
     public class crashdetail
     {
         public int crashdetailId { get; set; }
+
         public int crashId { get; set; }
         public int equipmentId { get; set; }
         public int workerId { get; set; }

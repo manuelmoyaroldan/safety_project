@@ -22,6 +22,7 @@ namespace model_safety.safety
         public DbSet<user> user { get; set; }
         public DbSet<equipmenttype> equipmenttype { get; set; }
         public DbSet<equipment> equipment { get; set; }
+        public DbSet<crash> crash { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<company> company { get; set; }
         //public DbSet<crash> Crash { get; set; }
         //public DbSet<crashdetail> CrashDetail { get; set; }

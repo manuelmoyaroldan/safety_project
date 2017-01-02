@@ -61,10 +61,10 @@
                             </ul>
                         </li>-->
                         <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets']"><i class="icon-calculator"></i> Crash List <span class="tag tag-info">NEW</span></a>
+                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/crash']"><i class="icon-calculator"></i> Crash List <span class="tag tag-info">NEW</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/charts']"><i class="icon-pie-chart"></i> New Crash</a>
+                            <a class="nav-link" routerLinkActive="active" [routerLink]="['/crashdocument/new']"><i class="icon-pie-chart"></i> New Crash</a>
                         </li>
                         <li class="divider"></li>
                         <li class="nav-title">
@@ -130,13 +130,16 @@
 
         <div style="background-color: #EEEEEE; height: 100% ; padding: 10px;">
             <router-outlet></router-outlet>
-            <div class="loading-overlay" *ngIf="loading">
-                <!-- show something fancy here, here with Angular 2 Material's loading bar or circle -->
-                Cargando...
+            <div *ngIf="loading" style="height: 100%;width: 100%;position: absolute;left: 0;top: 0;display: block;background-color: white;z-index: 999;">
+                <div style="margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%) ">
+                    <img src="style/squares.gif" />
+                </div>
             </div>
-            <div >
-                Cargando...
-            </div>
+            <!--<div  style="height: 100%;width:100%; position: absolute;background-color: white;z-index: 999;">
+                <div style="margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%) ">
+                    <img src="style/squares.gif" />
+                </div>                
+            </div>-->
 
         </div>
 

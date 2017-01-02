@@ -8,6 +8,14 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     {
+        path: 'crash',
+        loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./crash/crash.module')['CrashModule']); }); })
+    },
+    {
+        path: 'crashdocument/:id',
+        loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./crashdocument/crashdocument.module')['CrashdocumentModule']); }); })
+    },
+    {
         path: 'equipment',
         loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./equipment/equipment.module')['EquipmentModule']); }); })
     },

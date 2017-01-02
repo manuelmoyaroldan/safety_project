@@ -1,0 +1,71 @@
+﻿<div>
+    <md-card>
+        <md-card-header>
+            <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
+            <md-card-title style="padding-top: 14px;">EQUIPMENT</md-card-title>
+
+            <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+
+            <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="list options" tooltip-position="below">
+                <md-icon>more_vert</md-icon>
+            </button>
+
+            <md-menu x-position="before" #menu="mdMenu">
+                <button md-menu-item>
+                    <md-icon style="color: #757575;"> refresh </md-icon>
+                    <span> Refresh </span>
+                </button>
+                <button md-menu-item (click)="click_Add()">
+                    <md-icon style="color: #757575;"> add </md-icon>
+                    <span> Add </span>
+                </button>
+            </md-menu>
+        </md-card-header>
+        <md-divider></md-divider>
+        <md-card-content>
+            <p-dataTable [value]="list"
+                         selectionMode="single"
+                         [(selection)]="selected"
+                         scrollable="true"
+                         scrollHeight="200px"
+                         [contextMenu]="cm"
+                         (onRowSelect)="onRowSelect($event)"
+                         (onRowUnselect)="onRowUnselect($event)"
+                         #dt>
+                <!--<header>User List</header>
+                <footer></footer>-->
+                <p-column field="equipmentId" header="Id"></p-column>
+                <p-column field="name" header="Name"></p-column>
+                <p-column field="equipmenttype" header="Type">
+                    <template let-col let-item="rowData" pTemplate type="body">
+                        <span>{{item.equipmenttype?item.equipmenttype.name:any}}</span>
+                    </template>
+                </p-column>
+                <p-column field="isActive" header="Active"></p-column>
+            </p-dataTable>
+            <p-contextMenu #cm [model]="menu_items"  appendTo="body"></p-contextMenu>
+            <!--<md-list>
+                <md-list-item *ngFor="let item of list">
+                    <md-icon md-list-avatar style="padding-top: 10px;color: lightgray;">label_outline</md-icon>
+                    <div md-line><span>{{item.name}} {{item.equipmenttype?item.equipmenttype.name:'--'}}</span></div>
+                    <p md-line> {{item.isActive?'Enabled':'Disabled'}} </p>
+                    <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+                    <button md-icon-button md-tooltip="edit item" (click)="click_Edit(item)" tooltip-position="below">
+                        <md-icon style="color: #757575;">edit</md-icon>
+                    </button>
+                    <button md-icon-button md-tooltip="deactivate item" (click)="click_DeActivate(item)" tooltip-position="below" *ngIf="item.isActive">
+                        <md-icon style="color: #757575;">radio_button_checked</md-icon>
+                    </button>
+                    <button md-icon-button md-tooltip="activate item" (click)="click_Activate(item)" tooltip-position="below" *ngIf="!item.isActive">
+                        <md-icon style="color: #757575;">radio_button_unchecked</md-icon>
+                    </button>
+                    <button md-icon-button md-tooltip="delete item" (click)="click_Delete(item)"  tooltip-position="below">
+                        <md-icon style="color: #757575;">delete_forever</md-icon>
+                    </button>
+                </md-list-item>
+                <md-divider></md-divider>
+            </md-list>-->
+        </md-card-content>
+    </md-card>
+
+</div>

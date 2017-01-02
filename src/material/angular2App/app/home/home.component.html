@@ -1,4 +1,11 @@
 <div class="panel-group">
+    <div >
+        <div [fxLayout]="direction" (click)="toggleDirection()" class="colored box">
+                <div fxFlex="20">  fxFlex="20"  </div>
+                <div fxFlex="60">  fxFlex="60"  </div>
+                <div fxFlex>      fxFlex       </div>
+            </div>
+    </div>
 
     <!--<p>{{message}}</p>-->
     <!--<md-input placeholder="Character count (100 max)" maxlength="100" class="demo-full-width"

@@ -1,0 +1,69 @@
+﻿<div>
+    <md-toolbar color="primary" class="mm-toolbar-fixed">
+        <button md-icon-button (click)="sidenav.toggle()">
+            <md-icon>dehaze</md-icon>
+        </button>
+        <!--<button class="app-icon-button" (click)="sidenav.toggle()">
+            <i class="material-icons app-toolbar-menu">menu</i>
+        </button>-->
+        Safety
+    </md-toolbar>
+
+    <md-sidenav-layout fullscreen class="mm-content">
+
+        <md-sidenav #sidenav opened mode="side" class="app-sidenav mm-sidenav mm-sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']"><i class="icon-speedometer"></i> Home <span class="tag tag-info">NEW</span></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-title">
+                        CRASH
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/crash']"><i class="icon-calculator"></i> Crash List <span class="tag tag-info">NEW</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/crashdocument/new']"><i class="icon-pie-chart"></i> New Crash</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-title">
+                        OTHERS
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/equipment']"><i class="icon-pie-chart"></i> Equipment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/equipmenttype']"><i class="icon-pie-chart"></i> Equipment Type</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/berthing']"><i class="icon-pie-chart"></i> Berthing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/berthingd3']"><i class="icon-pie-chart"></i> Berthing D3</a>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </md-sidenav>
+
+        <div style="background-color: #EEEEEE; height: 100% ; padding: 10px;">
+            <router-outlet></router-outlet>
+            <div *ngIf="loading" style="height: 100%;width: 100%;position: absolute;left: 0;top: 0;display: block;background-color: white;z-index: 999;">
+                <div style="margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%) ">
+                    <img src="style/squares.gif" />
+                </div>
+            </div>
+            <!--<div  style="height: 100%;width:100%; position: absolute;background-color: white;z-index: 999;">
+                <div style="margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%) ">
+                    <img src="style/squares.gif" />
+                </div>
+            </div>-->
+
+        </div>
+
+    </md-sidenav-layout>
+</div>

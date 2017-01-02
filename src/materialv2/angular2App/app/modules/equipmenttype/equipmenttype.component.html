@@ -1,0 +1,171 @@
+﻿<div>
+    <!--DataTable-->
+    <md-card>
+        <md-card-header>
+            <!--<img md-card-avatar src="path/to/img.png">-->
+            <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
+            <md-card-title style="padding-top: 14px;">EQUIPMENT TYPE</md-card-title>
+            <!--<md-card-subtitle>Header subtitle</md-card-subtitle>-->
+
+            <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+
+            <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="list options" tooltip-position="below">
+                <md-icon>more_vert</md-icon>
+                <!--<md-icon fontSet="fa" fontIcon="fa-ellipsis-v"></md-icon>-->
+            </button>
+
+            <md-menu x-position="before" #menu="mdMenu">
+                <button md-menu-item>
+                    <md-icon style="color: #757575;"> refresh </md-icon>
+                    <span> Refresh </span>
+                </button>
+                <button md-menu-item (click)="click_Add()">
+                    <md-icon style="color: #757575;"> add </md-icon>
+                    <span> Add </span>
+                </button>
+
+            </md-menu>
+            <!--<md-divider></md-divider>-->
+        </md-card-header>
+        <md-divider></md-divider>
+        <md-card-content>
+            <!--<md-divider></md-divider>-->
+            <!--<p-dataTable [value]="list"
+                         selectionMode="single"
+                         [(selection)]="selected"
+                         scrollable="true"
+                         scrollHeight="200px"
+                         [contextMenu]="cm"
+                         (onRowSelect)="onRowSelect($event)"
+                         (onRowUnselect)="onRowUnselect($event)">
+                <header>User List</header>
+                <footer>
+                    <button pButton type="text" (click)="click_Add()" icon="fa-check" label="Add"></button>
+                </footer>
+                <p-column field="equipmenttypeId" header="Id"></p-column>
+                <p-column field="name" header="Name"></p-column>
+                <p-column field="isActive" header="Active"></p-column>
+            </p-dataTable>
+            <p-contextMenu #cm [model]="menu_items"></p-contextMenu>-->
+            <!--<md-list>
+                <h3 md-subheader>Folders</h3>
+                <md-list-item *ngFor="let item of list">
+                    <md-icon md-list-avatar>folder</md-icon>
+                    <div>
+                        <div md-line><span>{{item.name}}</span><span>test</span></div>
+                        <p md-line class="demo-2"> {{item.isActive?'Enabled':'Disabled'}} </p>
+                    </div>
+                    <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+                    <div><div md-line><md-icon md-list-avatar>folder</md-icon><md-icon md-list-avatar>folder</md-icon></div></div>
+                </md-list-item>
+                <md-divider></md-divider>
+            </md-list>-->
+            <md-list>
+                <!--<h3 md-subheader>Folders</h3>-->
+                <md-list-item *ngFor="let item of list">
+                    <!--<button md-icon-button>
+                        <md-icon>info</md-icon>
+                    </button>-->
+                    <!--<md-icon>folder</md-icon>-->
+                    <md-icon md-list-avatar style="padding-top: 10px;color: lightgray;">label_outline</md-icon>
+                    <!--<div md-list-text>-->
+                    <div md-line><span>{{item.name}}</span></div>
+                    <p md-line> {{item.isActive?'Enabled':'Disabled'}} </p>
+                    <!--</div>-->
+                    <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+                    <button md-icon-button md-tooltip="edit item" (click)="click_Edit(item)" tooltip-position="below">
+                        <md-icon style="color: #757575;">edit</md-icon>
+                    </button>
+                    <button md-icon-button md-tooltip="deactivate item" (click)="click_DeActivate(item)" tooltip-position="below" *ngIf="item.isActive">
+                        <md-icon style="color: #757575;">radio_button_checked</md-icon>
+                    </button>
+                    <button md-icon-button md-tooltip="activate item" (click)="click_Activate(item)" tooltip-position="below" *ngIf="!item.isActive">
+                        <md-icon style="color: #757575;">radio_button_unchecked</md-icon>
+                    </button>
+                    <button md-icon-button md-tooltip="delete item" (click)="click_Delete(item)"  tooltip-position="below">
+                        <md-icon style="color: #757575;">delete_forever</md-icon>
+                    </button>
+                    <!--<div><div md-line><md-icon md-list-avatar>folder</md-icon><md-icon md-list-avatar>folder</md-icon></div></div>-->
+                </md-list-item>
+                <md-divider></md-divider>
+            </md-list>
+
+            <!--<p-dataList [value]="list" [paginator]="false" >
+                <template let-item>
+                    <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:16px;padding:20px;border-bottom:1px solid #D5D5D5;">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-3" style="text-align:center"><i class="fa fa-search" (click)="selectCar(car)" style="cursor:pointer;float:left;margin-top:40px"></i><img src="showcase/resources/demo/images/car/{{car.brand}}-big.gif"></div>
+                            <div class="ui-grid-col-9">
+                                <div class="ui-grid ui-grid-responsive ui-fluid">
+                                    <div class="ui-grid-row">
+                                        <div class="ui-grid-col-2">Name </div>
+                                        <div class="ui-grid-col-10">{{item.name}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </p-dataList>-->
+            <!--<form>
+                <md-input class="demo-full-width" placeholder="Company (disabled)" disabled value="Google">
+                </md-input>
+
+                <table style="width: 100%" cellspacing="0">
+                    <tr>
+                        <td><md-input placeholder="First name" style="width: 100%"></md-input></td>
+                        <td><md-input placeholder="Long Last Name That Will Be Truncated" style="width: 100%"></md-input></td>
+                    </tr>
+                </table>
+                <p>
+                    <md-textarea class="demo-full-width" placeholder="Address" value="1600 Amphitheatre Pkway"></md-textarea>
+                    <md-textarea class="demo-full-width" placeholder="Address 2"></md-textarea>
+                </p>
+                <table style="width: 100%" cellspacing="0">
+                    <tr>
+                        <td><md-input class="demo-full-width" placeholder="City"></md-input></td>
+                        <td><md-input class="demo-full-width" placeholder="State"></md-input></td>
+                        <td><p-calendar [(ngModel)]="myfecha" [ngModelOptions]="{standalone: true}"></p-calendar></td>
+                        <td><p-calendar [(ngModel)]="myfecha"></p-calendar></td>
+                        <td>
+                            <md-input #postalCode class="demo-full-width" maxlength="5"
+                                      placeholder="Postal Code"
+                                      value="94043">
+                                <md-hint align="end">{{postalCode.characterCount}} / 5</md-hint>
+                            </md-input>
+                        </td>
+                    </tr>
+                </table>
+            </form>-->
+        </md-card-content>
+    </md-card>
+
+    {{lastCloseResult}}
+    <!--Dialog-->
+    <!--<p-dialog [(visible)]="show_dialog" modal="true" responsive="true" draggable="false" resizable="false">
+        <header>
+            Header content here
+        </header>
+        <form (ngSubmit)="onSubmit()" #customerForm="ngForm" class="editForm" novalidate>
+            <div class="form-group">
+                <label>Id</label>
+                <input type="text" class="form-control" name="phaseId" [(ngModel)]="current.phaseId" #Name="ngModel" required>
+                <div class="alert alert-danger" [hidden]="current.phaseId">Id is required</div>
+            </div>
+
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="current.name" #Name="ngModel" required>
+                <div class="alert alert-danger" [hidden]="current.name">Name is required</div>
+            </div>
+        </form>
+        <footer>
+            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                <button class="btn btn-default" (click)="onCancel($event)">Cancel</button>
+                <button class="btn btn-success" [disabled]="!customerForm.dirty || !customerForm.valid" (click)="onSubmit()">Update</button>
+            </div>
+        </footer>
+    </p-dialog>-->
+
+
+</div>
