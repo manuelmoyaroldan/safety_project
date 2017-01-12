@@ -1,0 +1,129 @@
+﻿<div>
+    <div class="flex-container"
+         fxLayout="row"
+         fxLayout.xs="column"
+         fxLayoutAlign.xs="start">
+        <div class="flex-item" fxFlex="33%" fxFlex.xs="100%">
+            <md-card class="mm-card">
+                <md-card-header>
+                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
+                    <md-card-title style="padding-top: 14px;">MY PROFILE</md-card-title>
+
+                    <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+
+                    <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="list options" tooltip-position="below">
+                        <md-icon>more_vert</md-icon>
+                    </button>
+                    <md-menu x-position="before" #menu="mdMenu">
+                        <button md-menu-item>
+                            <md-icon style="color: #757575;"> refresh </md-icon>
+                            <span> Refresh </span>
+                        </button>
+                        <button md-menu-item (click)="click_Add()">
+                            <md-icon style="color: #757575;"> add </md-icon>
+                            <span> Add </span>
+                        </button>
+                    </md-menu>
+                </md-card-header>
+                <md-divider></md-divider>
+                <md-card-content>
+                    <div fxLayout="column" fxLayoutAlign="start center">
+                        <div>
+                            <div class="mm-ava">
+                                <md-icon class="mm-ava-icon">person</md-icon>
+                            </div>
+                        </div>
+                        <div><span>Jones, John</span><span>JJO075</span></div>
+                        <div>Developer</div>
+                    </div>
+                </md-card-content>
+            </md-card>
+            <md-card class="mm-card">
+                <md-card-header>
+                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
+                    <md-card-title style="padding-top: 14px;">MY PAYROLLS</md-card-title>
+
+                    <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+
+                    <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="list options" tooltip-position="below">
+                        <md-icon>more_vert</md-icon>
+                    </button>
+                    <md-menu x-position="before" #menu="mdMenu">
+                        <button md-menu-item>
+                            <md-icon style="color: #757575;"> refresh </md-icon>
+                            <span> Refresh </span>
+                        </button>
+                        <button md-menu-item (click)="click_Add()">
+                            <md-icon style="color: #757575;"> add </md-icon>
+                            <span> Add </span>
+                        </button>
+                    </md-menu>
+                </md-card-header>
+                <md-divider></md-divider>
+                <md-card-content>
+                    Content
+                </md-card-content>
+            </md-card>
+        </div>
+        <div class="flex-item" fxFlex="33%" fxFlex.xs="100%">
+            <md-card class="mm-card">
+                <md-card-header>
+                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
+                    <md-card-title style="padding-top: 14px;">SCHEDULE</md-card-title>
+
+                    <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+
+                    <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="list options" tooltip-position="below">
+                        <md-icon>more_vert</md-icon>
+                    </button>
+                    <md-menu x-position="before" #menu="mdMenu">
+                        <button md-menu-item>
+                            <md-icon style="color: #757575;"> refresh </md-icon>
+                            <span> Refresh </span>
+                        </button>
+                        <button md-menu-item (click)="click_Add()">
+                            <md-icon style="color: #757575;"> add </md-icon>
+                            <span> Add </span>
+                        </button>
+                    </md-menu>
+                </md-card-header>
+                <md-divider></md-divider>
+                <md-card-content>
+                    <!--<p-schedule ></p-schedule>-->
+                    <p-calendar [inline]="true"></p-calendar>
+                </md-card-content>
+            </md-card>
+
+        </div>
+        <div class="flex-item" fxFlex="33%" fxFlex.xs="100%">
+            <md-card class="mm-card">
+                <md-card-header>
+                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
+                    <md-card-title style="padding-top: 14px;">TRAVELS</md-card-title>
+
+                    <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
+
+                    <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="list options" tooltip-position="below">
+                        <md-icon>more_vert</md-icon>
+                    </button>
+                    <md-menu x-position="before" #menu="mdMenu">
+                        <button md-menu-item>
+                            <md-icon style="color: #757575;"> refresh </md-icon>
+                            <span> Refresh </span>
+                        </button>
+                        <button md-menu-item (click)="click_Add()">
+                            <md-icon style="color: #757575;"> add </md-icon>
+                            <span> Add </span>
+                        </button>
+                    </md-menu>
+                </md-card-header>
+                <md-divider></md-divider>
+                <md-card-content>
+                    Content
+                </md-card-content>
+            </md-card>
+
+        </div>
+    </div>
+
+</div>

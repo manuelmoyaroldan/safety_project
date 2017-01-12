@@ -1,4 +1,4 @@
-﻿//import 'jquery/src/jquery';
+﻿//import 'jquery/src/jquery'; //for schedule
 //import 'bootstrap/dist/js/bootstrap';
 
 //import 'bootstrap/dist/css/bootstrap.css';

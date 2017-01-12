@@ -15,6 +15,10 @@ const appRoutes: Routes = [
         loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./modules/equipment/equipment.module')['EquipmentModule']); }); })
     },
     {
+        path: 'employee',
+        loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./modules/employee/employee.module')['EmployeeModule']); }); })
+    },
+    {
         path: 'equipmenttype',
         loadChildren: () => new Promise(function (resolve) { (require as any).ensure([], function (require: any) { resolve(require('./modules/equipmenttype/equipmenttype.module')['EquipmenttypeModule']); }); })
     },

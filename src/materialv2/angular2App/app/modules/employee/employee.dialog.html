@@ -1,0 +1,14 @@
+﻿<div>
+    <div md-dialog-title>
+        Employee
+    </div>
+    <md-dialog-content>
+        <div style="min-height:150px;">
+            <input [(ngModel)]="current.name" placeholder="name">
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <button type="button" (click)="click_Close()">Cancel</button>
+        <button type="button" (click)="click_Save()">Save</button>
+    </md-dialog-actions>
+</div>
