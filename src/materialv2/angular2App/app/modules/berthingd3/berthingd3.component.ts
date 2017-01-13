@@ -78,7 +78,7 @@ export class Berthingd3Component implements OnInit {
         if (this.parentNativeElement !== null) {
             d3ParentElement = d3.select(this.parentNativeElement); // <-- use the D3 select method 
             var svgContainer = d3.select(this.parentNativeElement).append("svg").attr("width", "100%").attr("height", "100%").style("background-color", "transparent");
-            console.log("test");
+            ////console.log("test");
             //Pattern injection
             //var pattern = svgContainer.append("defs")
             //    .append("pattern")
@@ -104,54 +104,54 @@ export class Berthingd3Component implements OnInit {
                 .attr("stroke", "gray")
                 .attr("stroke-width", 0.5)
                 .attr("fill", "none");
-            var pattern2 = defs
-                .append("pattern")
-                .attrs({ id: "mygrid", width: "80", height: "80", patternUnits: "userSpaceOnUse" })
-                //.append("rect")
-                //.attr("width","80")
-                //.attr("heigth", "80")
-                //.attr("fill","url(#smallgrid)")
-                //.append("path")
-                //.attr("d", "M 80 0 L 0 0 0 80")
-                //.attr("stroke", "gray")
-                //.attr("stroke-width", 0.5)
-                //.attr("fill", "url(#smallgrid)")
-                ;
-            pattern2.append("rect")
-                .attr("width", "80")
-                .attr("heigth", "80")
-                .attr("fill", "url(#mysmallgrid)");
+////            var pattern2 = defs
+////                .append("pattern")
+////                .attrs({ id: "mygrid", width: "80", height: "80", patternUnits: "userSpaceOnUse" })
+////                //.append("rect")
+////                //.attr("width","80")
+////                //.attr("heigth", "80")
+////                //.attr("fill","url(#smallgrid)")
+////                //.append("path")
+////                //.attr("d", "M 80 0 L 0 0 0 80")
+////                //.attr("stroke", "gray")
+////                //.attr("stroke-width", 0.5)
+////                //.attr("fill", "url(#smallgrid)")
+////                ;
+////            pattern2.append("rect")
+////                .attr("width", "80")
+////                .attr("heigth", "80")
+////                .attr("fill", "url(#mysmallgrid)");
 
-            pattern2.append("path")
-                .attr("d", "M 80 0 L 0 0 0 80")
-                .attr("stroke", "gray")
-                .attr("stroke-width", 1)
-                .attr("fill", "transparent")
-                //.attr("fill", "url(#smallgrid)")
-                ;
+////            pattern2.append("path")
+////                .attr("d", "M 80 0 L 0 0 0 80")
+////                .attr("stroke", "gray")
+////                .attr("stroke-width", 1)
+////                .attr("fill", "transparent")
+////                //.attr("fill", "url(#smallgrid)")
+////                ;
 
-            //Shape design
-            //svgContainer.append("g").attr("id", "shape")
-            //    .append("rect")
-            //        .attrs({ x: "0", y: "0", width: "100%", height: "100%", fill: "url(#smallgrid)" });
-            svgContainer.append("rect")
-                .attrs({ x: "0", y: "0", width: "100%", height: "100%", fill: "url(#mysmallgrid)" });
-            svgContainer.append("rect")
-                .attrs({ x: "0", y: "0", width: "100%", height: "100%", fill: "url(#mygrid)" });
+////            //Shape design
+////            //svgContainer.append("g").attr("id", "shape")
+////            //    .append("rect")
+////            //        .attrs({ x: "0", y: "0", width: "100%", height: "100%", fill: "url(#smallgrid)" });
+////            svgContainer.append("rect")
+////                .attrs({ x: "0", y: "0", width: "100%", height: "100%", fill: "url(#mysmallgrid)" });
+////            svgContainer.append("rect")
+////                .attrs({ x: "0", y: "0", width: "100%", height: "100%", fill: "url(#mygrid)" });
 
-            //svgContainer.append("line")
-            //    .attr("x1","1")
-            //    .attr("y1","1")
-            //    .attr("x2","100")
-            //    .attr("y2","100")
-            //    .attr("stroke","black")
-            //    .attr("stroke-width","1");
+////            //svgContainer.append("line")
+////            //    .attr("x1","1")
+////            //    .attr("y1","1")
+////            //    .attr("x2","100")
+////            //    .attr("y2","100")
+////            //    .attr("stroke","black")
+////            //    .attr("stroke-width","1");
 
-            var linea = d3.line().x(1).y(10);
-//            svgContainer.append(linea);
-            var lineData = [{ "x": 1, "y": 5 }, { "x": 20, "y": 20 },
-                                 { "x": 40, "y": 10 }, { "x": 60, "y": 40 },
-                                 { "x": 80, "y": 5 }, { "x": 100, "y": 60 }];
+////            //var linea = d3.line().x(1).y(10);
+//////            svgContainer.append(linea);
+////            var lineData = [{ "x": 1, "y": 5 }, { "x": 20, "y": 20 },
+////                                 { "x": 40, "y": 10 }, { "x": 60, "y": 40 },
+////                                 { "x": 80, "y": 5 }, { "x": 100, "y": 60 }];
             
             //This is the accessor function we talked about above
             //var lineGraph = svgContainer.append("path").attr("d", lineFunction(lineData)).attr("stroke", "blue")

@@ -6,11 +6,11 @@
         <div class="flex-item" fxFlex="33%" fxFlex.xs="100%">
             <md-card class="mm-card">
                 <md-card-header>
-                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
-                    <md-card-title style="padding-top: 14px;">MY PROFILE</md-card-title>
+                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">face</md-icon>
+                    <md-card-title class="mm-card-title">MY PROFILE</md-card-title>
 
                     <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
-
+                        
                     <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="list options" tooltip-position="below">
                         <md-icon>more_vert</md-icon>
                     </button>
@@ -33,15 +33,15 @@
                                 <md-icon class="mm-ava-icon">person</md-icon>
                             </div>
                         </div>
-                        <div><span>Jones, John</span><span>JJO075</span></div>
-                        <div>Developer</div>
+                        <div style="font-size: 24px;color: #757575;"><span >Jones, John </span><span style="color:#bdbdbd;font-size:18px;"> JJO075</span></div>
+                        <div style="font-size: 18px;color: #9e9e9e;">Developer</div>
                     </div>
                 </md-card-content>
             </md-card>
             <md-card class="mm-card">
                 <md-card-header>
                     <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
-                    <md-card-title style="padding-top: 14px;">MY PAYROLLS</md-card-title>
+                    <md-card-title class="mm-card-title">MY PAYROLLS</md-card-title>
 
                     <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
 
@@ -68,8 +68,8 @@
         <div class="flex-item" fxFlex="33%" fxFlex.xs="100%">
             <md-card class="mm-card">
                 <md-card-header>
-                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
-                    <md-card-title style="padding-top: 14px;">SCHEDULE</md-card-title>
+                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">today</md-icon>
+                    <md-card-title class="mm-card-title">SCHEDULE</md-card-title>
 
                     <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
 
@@ -89,8 +89,9 @@
                 </md-card-header>
                 <md-divider></md-divider>
                 <md-card-content>
-                    <!--<p-schedule ></p-schedule>-->
-                    <p-calendar [inline]="true"></p-calendar>
+                    <!--<p-schedule></p-schedule>-->
+                    <!--<span>test</span>-->
+                    <!--<p-calendar [inline]="true"></p-calendar><p-calendar [inline]="true"></p-calendar>-->
                 </md-card-content>
             </md-card>
 
@@ -98,8 +99,8 @@
         <div class="flex-item" fxFlex="33%" fxFlex.xs="100%">
             <md-card class="mm-card">
                 <md-card-header>
-                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">folder_open</md-icon>
-                    <md-card-title style="padding-top: 14px;">TRAVELS</md-card-title>
+                    <md-icon md-card-avatar style="line-height:44px;color: lightgray;">flight_takeoff</md-icon>
+                    <md-card-title class="mm-card-title">TRAVELS</md-card-title>
 
                     <span class="example-fill-remaining-space" style="flex: 1 1 auto;"></span>
 

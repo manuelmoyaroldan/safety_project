@@ -12,6 +12,9 @@ import { DataListModule, DataTableModule, MenuItem, ContextMenuModule, DialogMod
 
 import './employee.component.scss';
 
+//(window).jQuery = (window).$ = jQuery; // without this, the schedule can't find jQuery (not sure if better way)
+//(window as any).$ = (window as any).fullCalendar = fullCalendar;
+
 @Component({
     templateUrl: 'employee.component.html'
     , providers: [EmployeeService
@@ -21,6 +24,7 @@ import './employee.component.scss';
         , DialogModule
         , ScheduleModule
     ]
+    
 })
 export class EmployeeComponent implements OnInit {
     dialogRef: MdDialogRef<EmployeeDialog>;
