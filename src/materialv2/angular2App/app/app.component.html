@@ -1,5 +1,5 @@
 ﻿<div>
-    <md-toolbar color="primary" class="mm-toolbar-fixed">
+    <md-toolbar color="primary" class="mm-toolbar-fixed md-elevation-z6">
         <button md-icon-button (click)="sidenav.toggle()">
             <md-icon>dehaze</md-icon>
         </button>
@@ -7,6 +7,14 @@
             <i class="material-icons app-toolbar-menu">menu</i>
         </button>-->
         Draft
+        <span class="fill-remaining-space"></span>
+        <button md-icon-button (click)="sidenav.toggle()">
+            <md-icon>notifications</md-icon>
+        </button>
+        <button md-icon-button (click)="sidenav.toggle()">
+            <md-icon>person</md-icon>
+        </button>
+
     </md-toolbar>
 
     <md-sidenav-layout fullscreen class="mm-content">
@@ -42,6 +50,9 @@
                     <li class="divider"></li>
                     <li class="nav-title">
                         OTHERS
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/company']"><i class="icon-pie-chart"></i> Company</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" routerLinkActive="active" [routerLink]="['/equipment']"><i class="icon-pie-chart"></i> Equipment</a>

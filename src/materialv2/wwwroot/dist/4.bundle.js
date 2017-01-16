@@ -1,16 +1,97 @@
 webpackJsonp([4],{
 
-/***/ 1426:
+/***/ 1082:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_flex_layout__ = __webpack_require__(630);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_constants__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__employee_component__ = __webpack_require__(1545);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__employee_dialog__ = __webpack_require__(1546);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__employee_routing_module__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__ = __webpack_require__(627);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_primeng_primeng__);
+/* harmony export (binding) */ __webpack_require__.d(exports, "EmployeeModule", function() { return EmployeeModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+var EmployeeModule = (function () {
+    function EmployeeModule() {
+    }
+    EmployeeModule = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["MaterialModule"],
+                __WEBPACK_IMPORTED_MODULE_4__angular_flex_layout__["a" /* FlexLayoutModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
+                __WEBPACK_IMPORTED_MODULE_8__employee_routing_module__["a" /* EmployeeRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["DataListModule"],
+                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["DataTableModule"],
+                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["ContextMenuModule"],
+                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["DialogModule"],
+                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["ButtonModule"],
+                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["DropdownModule"],
+                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["CalendarModule"],
+                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["ScheduleModule"]
+            ],
+            declarations: [__WEBPACK_IMPORTED_MODULE_6__employee_component__["a" /* EmployeeComponent */], __WEBPACK_IMPORTED_MODULE_7__employee_dialog__["a" /* EmployeeDialog */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_7__employee_dialog__["a" /* EmployeeDialog */]],
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_7__employee_dialog__["a" /* EmployeeDialog */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_5__app_constants__["a" /* Configuration */]]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], EmployeeModule);
+    return EmployeeModule;
+}());
+
+
+/***/ },
+
+/***/ 1095:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(4);
+var toPromise_1 = __webpack_require__(629);
+Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
+//# sourceMappingURL=toPromise.js.map
+
+/***/ },
+
+/***/ 1545:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__employee_service__ = __webpack_require__(1428);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__employee_dialog__ = __webpack_require__(1427);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(313);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_primeng_primeng__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__employee_service__ = __webpack_require__(1547);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__employee_dialog__ = __webpack_require__(1546);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_primeng_primeng__ = __webpack_require__(627);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_primeng_primeng__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__employee_component_scss__ = __webpack_require__(1455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__employee_component_scss__ = __webpack_require__(1577);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__employee_component_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__employee_component_scss__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return EmployeeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -163,7 +244,7 @@ var EmployeeComponent = (function () {
     };
     EmployeeComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            template: __webpack_require__(1449),
+            template: __webpack_require__(1571),
             providers: [__WEBPACK_IMPORTED_MODULE_1__employee_service__["a" /* EmployeeService */],
                 __WEBPACK_IMPORTED_MODULE_4_primeng_primeng__["DataListModule"],
                 __WEBPACK_IMPORTED_MODULE_4_primeng_primeng__["DataTableModule"],
@@ -181,13 +262,13 @@ var EmployeeComponent = (function () {
 
 /***/ },
 
-/***/ 1427:
+/***/ 1546:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__employee_service__ = __webpack_require__(1428);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__employee_service__ = __webpack_require__(1547);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(314);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return EmployeeDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -225,7 +306,7 @@ var EmployeeDialog = (function () {
     EmployeeDialog = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'EmployeeDialog',
-            template: __webpack_require__(1450),
+            template: __webpack_require__(1572),
             providers: [__WEBPACK_IMPORTED_MODULE_1__employee_service__["a" /* EmployeeService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__employee_service__["a" /* EmployeeService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__employee_service__["a" /* EmployeeService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["MdDialogRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["MdDialogRef"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["MdSnackBar"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["MdSnackBar"]) === 'function' && _c) || Object])
@@ -237,18 +318,18 @@ var EmployeeDialog = (function () {
 
 /***/ },
 
-/***/ 1428:
+/***/ 1547:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constants__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constants__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(628);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__ = __webpack_require__(983);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__ = __webpack_require__(1095);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return EmployeeService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -316,13 +397,13 @@ var EmployeeService = (function () {
 
 /***/ },
 
-/***/ 1439:
+/***/ 1559:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__employee_component__ = __webpack_require__(1426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__employee_component__ = __webpack_require__(1545);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return EmployeeRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -361,45 +442,45 @@ var EmployeeRoutingModule = (function () {
 
 /***/ },
 
-/***/ 1441:
+/***/ 1561:
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(205)();
+exports = module.exports = __webpack_require__(145)();
 // imports
 
 
 // module
-exports.push([module.i, ".mm-card {\n  margin: 5px;\n  padding-top: 10px; }\n\n.mm-ava {\n  margin: 10px;\n  border: 3px solid rgba(150, 180, 150, 0.8);\n  border-color: #9E9E9E;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  height: 103px;\n  width: 103px;\n  float: left;\n  background-color: lightgray;\n  /*box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75) inset;\r\n  -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75) inset;\r\n  -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75) inset;*/ }\n\n.mm-ava-icon {\n  /*position: relative;*/\n  /*display: block;*/\n  /*width: 100%;*/\n  /*border-radius: 50%;*/\n  /*z-index: -1;*/\n  color: gray;\n  font-size: 95px; }\n\n.mm-card-title {\n  padding-top: 12px;\n  color: #bdbdbd;\n  font-weight: 600;\n  font-size: 16px; }\n\n/*.mm-card {\r\n  float: left;\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  position: relative;\r\n  width: 200px;\r\n  border: 1px solid #CCC;\r\n  border-radius: 4px;\r\n  text-align: center;*/\n.mm-header {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 70px;\n  z-index: 1; }\n\n.mm-avatar {\n  position: relative;\n  margin-top: 15px;\n  z-index: 100; }\n  .mm-avatar img {\n    width: 100px;\n    height: 100px;\n    -webkit-border-radius: 50%;\n    -moz-border-radius: 50%;\n    border-radius: 50%;\n    border: 5px solid rgba(0, 0, 30, 0.8); }\n\n.content {\n  padding: 10px; }\n\n/*}*/\n", ""]);
+exports.push([module.i, ".mm-card {\n  margin: 5px;\n  padding-top: 10px; }\n\n.mm-ava {\n  margin: 10px;\n  border: 3px solid rgba(150, 180, 150, 0.8);\n  border-color: #9E9E9E;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  height: 103px;\n  width: 103px;\n  float: left;\n  background-color: lightgray;\n  /*box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75) inset;\r\n  -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75) inset;\r\n  -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75) inset;*/ }\n\n.mm-ava-icon {\n  /*position: relative;*/\n  /*display: block;*/\n  /*width: 100%;*/\n  /*border-radius: 50%;*/\n  /*z-index: -1;*/\n  color: gray;\n  font-size: 103px; }\n\n.mm-card-title {\n  padding-top: 12px;\n  color: #bdbdbd;\n  font-weight: 600;\n  font-size: 16px; }\n\n/*.mm-card {\r\n  float: left;\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  position: relative;\r\n  width: 200px;\r\n  border: 1px solid #CCC;\r\n  border-radius: 4px;\r\n  text-align: center;*/\n.mm-header {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 70px;\n  z-index: 1; }\n\n.mm-avatar {\n  position: relative;\n  margin-top: 15px;\n  z-index: 100; }\n  .mm-avatar img {\n    width: 100px;\n    height: 100px;\n    -webkit-border-radius: 50%;\n    -moz-border-radius: 50%;\n    border-radius: 50%;\n    border: 5px solid rgba(0, 0, 30, 0.8); }\n\n.content {\n  padding: 10px; }\n\n/*}*/\n", ""]);
 
 // exports
 
 
 /***/ },
 
-/***/ 1449:
+/***/ 1571:
 /***/ function(module, exports) {
 
 module.exports = "<div>\r\n    <div class=\"flex-container\"\r\n         fxLayout=\"row\"\r\n         fxLayout.xs=\"column\"\r\n         fxLayoutAlign.xs=\"start\">\r\n        <div class=\"flex-item\" fxFlex=\"33%\" fxFlex.xs=\"100%\">\r\n            <md-card class=\"mm-card\">\r\n                <md-card-header>\r\n                    <md-icon md-card-avatar style=\"line-height:44px;color: lightgray;\">face</md-icon>\r\n                    <md-card-title class=\"mm-card-title\">MY PROFILE</md-card-title>\r\n\r\n                    <span class=\"example-fill-remaining-space\" style=\"flex: 1 1 auto;\"></span>\r\n                        \r\n                    <button md-icon-button [md-menu-trigger-for]=\"menu\" md-tooltip=\"list options\" tooltip-position=\"below\">\r\n                        <md-icon>more_vert</md-icon>\r\n                    </button>\r\n                    <md-menu x-position=\"before\" #menu=\"mdMenu\">\r\n                        <button md-menu-item>\r\n                            <md-icon style=\"color: #757575;\"> refresh </md-icon>\r\n                            <span> Refresh </span>\r\n                        </button>\r\n                        <button md-menu-item (click)=\"click_Add()\">\r\n                            <md-icon style=\"color: #757575;\"> add </md-icon>\r\n                            <span> Add </span>\r\n                        </button>\r\n                    </md-menu>\r\n                </md-card-header>\r\n                <md-divider></md-divider>\r\n                <md-card-content>\r\n                    <div fxLayout=\"column\" fxLayoutAlign=\"start center\">\r\n                        <div>\r\n                            <div class=\"mm-ava\">\r\n                                <md-icon class=\"mm-ava-icon\">person</md-icon>\r\n                            </div>\r\n                        </div>\r\n                        <div style=\"font-size: 24px;color: #757575;\"><span >Jones, John </span><span style=\"color:#bdbdbd;font-size:18px;\"> JJO075</span></div>\r\n                        <div style=\"font-size: 18px;color: #9e9e9e;\">Developer</div>\r\n                    </div>\r\n                </md-card-content>\r\n            </md-card>\r\n            <md-card class=\"mm-card\">\r\n                <md-card-header>\r\n                    <md-icon md-card-avatar style=\"line-height:44px;color: lightgray;\">folder_open</md-icon>\r\n                    <md-card-title class=\"mm-card-title\">MY PAYROLLS</md-card-title>\r\n\r\n                    <span class=\"example-fill-remaining-space\" style=\"flex: 1 1 auto;\"></span>\r\n\r\n                    <button md-icon-button [md-menu-trigger-for]=\"menu\" md-tooltip=\"list options\" tooltip-position=\"below\">\r\n                        <md-icon>more_vert</md-icon>\r\n                    </button>\r\n                    <md-menu x-position=\"before\" #menu=\"mdMenu\">\r\n                        <button md-menu-item>\r\n                            <md-icon style=\"color: #757575;\"> refresh </md-icon>\r\n                            <span> Refresh </span>\r\n                        </button>\r\n                        <button md-menu-item (click)=\"click_Add()\">\r\n                            <md-icon style=\"color: #757575;\"> add </md-icon>\r\n                            <span> Add </span>\r\n                        </button>\r\n                    </md-menu>\r\n                </md-card-header>\r\n                <md-divider></md-divider>\r\n                <md-card-content>\r\n                    Content\r\n                </md-card-content>\r\n            </md-card>\r\n        </div>\r\n        <div class=\"flex-item\" fxFlex=\"33%\" fxFlex.xs=\"100%\">\r\n            <md-card class=\"mm-card\">\r\n                <md-card-header>\r\n                    <md-icon md-card-avatar style=\"line-height:44px;color: lightgray;\">today</md-icon>\r\n                    <md-card-title class=\"mm-card-title\">SCHEDULE</md-card-title>\r\n\r\n                    <span class=\"example-fill-remaining-space\" style=\"flex: 1 1 auto;\"></span>\r\n\r\n                    <button md-icon-button [md-menu-trigger-for]=\"menu\" md-tooltip=\"list options\" tooltip-position=\"below\">\r\n                        <md-icon>more_vert</md-icon>\r\n                    </button>\r\n                    <md-menu x-position=\"before\" #menu=\"mdMenu\">\r\n                        <button md-menu-item>\r\n                            <md-icon style=\"color: #757575;\"> refresh </md-icon>\r\n                            <span> Refresh </span>\r\n                        </button>\r\n                        <button md-menu-item (click)=\"click_Add()\">\r\n                            <md-icon style=\"color: #757575;\"> add </md-icon>\r\n                            <span> Add </span>\r\n                        </button>\r\n                    </md-menu>\r\n                </md-card-header>\r\n                <md-divider></md-divider>\r\n                <md-card-content>\r\n                    <!--<p-schedule></p-schedule>-->\r\n                    <!--<span>test</span>-->\r\n                    <!--<p-calendar [inline]=\"true\"></p-calendar><p-calendar [inline]=\"true\"></p-calendar>-->\r\n                </md-card-content>\r\n            </md-card>\r\n\r\n        </div>\r\n        <div class=\"flex-item\" fxFlex=\"33%\" fxFlex.xs=\"100%\">\r\n            <md-card class=\"mm-card\">\r\n                <md-card-header>\r\n                    <md-icon md-card-avatar style=\"line-height:44px;color: lightgray;\">flight_takeoff</md-icon>\r\n                    <md-card-title class=\"mm-card-title\">TRAVELS</md-card-title>\r\n\r\n                    <span class=\"example-fill-remaining-space\" style=\"flex: 1 1 auto;\"></span>\r\n\r\n                    <button md-icon-button [md-menu-trigger-for]=\"menu\" md-tooltip=\"list options\" tooltip-position=\"below\">\r\n                        <md-icon>more_vert</md-icon>\r\n                    </button>\r\n                    <md-menu x-position=\"before\" #menu=\"mdMenu\">\r\n                        <button md-menu-item>\r\n                            <md-icon style=\"color: #757575;\"> refresh </md-icon>\r\n                            <span> Refresh </span>\r\n                        </button>\r\n                        <button md-menu-item (click)=\"click_Add()\">\r\n                            <md-icon style=\"color: #757575;\"> add </md-icon>\r\n                            <span> Add </span>\r\n                        </button>\r\n                    </md-menu>\r\n                </md-card-header>\r\n                <md-divider></md-divider>\r\n                <md-card-content>\r\n                    Content\r\n                </md-card-content>\r\n            </md-card>\r\n\r\n        </div>\r\n    </div>\r\n\r\n</div>"
 
 /***/ },
 
-/***/ 1450:
+/***/ 1572:
 /***/ function(module, exports) {
 
 module.exports = "<div>\r\n    <div md-dialog-title>\r\n        Employee\r\n    </div>\r\n    <md-dialog-content>\r\n        <div style=\"min-height:150px;\">\r\n            <input [(ngModel)]=\"current.name\" placeholder=\"name\">\r\n        </div>\r\n    </md-dialog-content>\r\n    <md-dialog-actions>\r\n        <button type=\"button\" (click)=\"click_Close()\">Cancel</button>\r\n        <button type=\"button\" (click)=\"click_Save()\">Save</button>\r\n    </md-dialog-actions>\r\n</div>"
 
 /***/ },
 
-/***/ 1455:
+/***/ 1577:
 /***/ function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1441);
+var content = __webpack_require__(1561);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(206)(content, {});
+var update = __webpack_require__(148)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -414,87 +495,6 @@ if(false) {
 	// When the module is disposed, remove the <style> tags
 	module.hot.dispose(function() { update(); });
 }
-
-/***/ },
-
-/***/ 967:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(313);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_flex_layout__ = __webpack_require__(521);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_constants__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__employee_component__ = __webpack_require__(1426);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__employee_dialog__ = __webpack_require__(1427);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__employee_routing_module__ = __webpack_require__(1439);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_primeng_primeng__);
-/* harmony export (binding) */ __webpack_require__.d(exports, "EmployeeModule", function() { return EmployeeModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-var EmployeeModule = (function () {
-    function EmployeeModule() {
-    }
-    EmployeeModule = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["MaterialModule"],
-                __WEBPACK_IMPORTED_MODULE_4__angular_flex_layout__["a" /* FlexLayoutModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
-                __WEBPACK_IMPORTED_MODULE_8__employee_routing_module__["a" /* EmployeeRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["DataListModule"],
-                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["DataTableModule"],
-                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["ContextMenuModule"],
-                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["DialogModule"],
-                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["ButtonModule"],
-                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["DropdownModule"],
-                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["CalendarModule"],
-                __WEBPACK_IMPORTED_MODULE_9_primeng_primeng__["ScheduleModule"]
-            ],
-            declarations: [__WEBPACK_IMPORTED_MODULE_6__employee_component__["a" /* EmployeeComponent */], __WEBPACK_IMPORTED_MODULE_7__employee_dialog__["a" /* EmployeeDialog */]],
-            exports: [__WEBPACK_IMPORTED_MODULE_7__employee_dialog__["a" /* EmployeeDialog */]],
-            entryComponents: [__WEBPACK_IMPORTED_MODULE_7__employee_dialog__["a" /* EmployeeDialog */]],
-            providers: [__WEBPACK_IMPORTED_MODULE_5__app_constants__["a" /* Configuration */]]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], EmployeeModule);
-    return EmployeeModule;
-}());
-
-
-/***/ },
-
-/***/ 983:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(3);
-var toPromise_1 = __webpack_require__(520);
-Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
-//# sourceMappingURL=toPromise.js.map
 
 /***/ }
 

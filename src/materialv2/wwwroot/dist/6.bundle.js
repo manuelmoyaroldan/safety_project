@@ -1,14 +1,91 @@
 webpackJsonp([6],{
 
-/***/ 1422:
+/***/ 1080:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_constants__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__crash_component__ = __webpack_require__(1541);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__crash_dialog__ = __webpack_require__(1542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__crash_routing_module__ = __webpack_require__(1556);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__ = __webpack_require__(627);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_primeng_primeng__);
+/* harmony export (binding) */ __webpack_require__.d(exports, "CrashModule", function() { return CrashModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var CrashModule = (function () {
+    function CrashModule() {
+    }
+    CrashModule = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["MaterialModule"],
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
+                __WEBPACK_IMPORTED_MODULE_7__crash_routing_module__["a" /* CrashRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["DataListModule"],
+                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["DataTableModule"],
+                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["ContextMenuModule"],
+                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["DialogModule"],
+                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["ButtonModule"],
+                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["DropdownModule"],
+                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["CalendarModule"]
+            ],
+            declarations: [__WEBPACK_IMPORTED_MODULE_5__crash_component__["a" /* CrashComponent */], __WEBPACK_IMPORTED_MODULE_6__crash_dialog__["a" /* CrashDialog */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_6__crash_dialog__["a" /* CrashDialog */]],
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_6__crash_dialog__["a" /* CrashDialog */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_4__app_constants__["a" /* Configuration */]]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], CrashModule);
+    return CrashModule;
+}());
+
+
+/***/ },
+
+/***/ 1095:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(4);
+var toPromise_1 = __webpack_require__(629);
+Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
+//# sourceMappingURL=toPromise.js.map
+
+/***/ },
+
+/***/ 1541:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__crash_service__ = __webpack_require__(1424);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__crash_dialog__ = __webpack_require__(1423);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(313);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_primeng_primeng__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__crash_service__ = __webpack_require__(1543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__crash_dialog__ = __webpack_require__(1542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_primeng_primeng__ = __webpack_require__(627);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_primeng_primeng__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CrashComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -163,7 +240,7 @@ var CrashComponent = (function () {
     };
     CrashComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            template: __webpack_require__(1446),
+            template: __webpack_require__(1568),
             providers: [__WEBPACK_IMPORTED_MODULE_1__crash_service__["a" /* CrashService */],
                 __WEBPACK_IMPORTED_MODULE_4_primeng_primeng__["DataListModule"],
                 __WEBPACK_IMPORTED_MODULE_4_primeng_primeng__["DataTableModule"],
@@ -180,13 +257,13 @@ var CrashComponent = (function () {
 
 /***/ },
 
-/***/ 1423:
+/***/ 1542:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__crash_service__ = __webpack_require__(1424);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__crash_service__ = __webpack_require__(1543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(314);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CrashDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -224,7 +301,7 @@ var CrashDialog = (function () {
     CrashDialog = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'CrashDialog',
-            template: __webpack_require__(1447),
+            template: __webpack_require__(1569),
             providers: [__WEBPACK_IMPORTED_MODULE_1__crash_service__["a" /* CrashService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__crash_service__["a" /* CrashService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__crash_service__["a" /* CrashService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["MdDialogRef"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["MdDialogRef"]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["MdSnackBar"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["MdSnackBar"]) === 'function' && _c) || Object])
@@ -236,18 +313,18 @@ var CrashDialog = (function () {
 
 /***/ },
 
-/***/ 1424:
+/***/ 1543:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constants__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_constants__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__(628);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__ = __webpack_require__(983);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__ = __webpack_require__(1095);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CrashService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -315,13 +392,13 @@ var CrashService = (function () {
 
 /***/ },
 
-/***/ 1436:
+/***/ 1556:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__crash_component__ = __webpack_require__(1422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__crash_component__ = __webpack_require__(1541);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CrashRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -360,94 +437,17 @@ var CrashRoutingModule = (function () {
 
 /***/ },
 
-/***/ 1446:
+/***/ 1568:
 /***/ function(module, exports) {
 
 module.exports = "<div>\r\n    <md-card>\r\n        <md-card-header>\r\n            <md-icon md-card-avatar style=\"line-height:44px;color: lightgray;\">folder_open</md-icon>\r\n            <md-card-title style=\"padding-top: 14px;\">CRASH</md-card-title>\r\n\r\n            <span class=\"example-fill-remaining-space\" style=\"flex: 1 1 auto;\"></span>\r\n\r\n            <button md-icon-button [md-menu-trigger-for]=\"menu\" md-tooltip=\"list options\" tooltip-position=\"below\">\r\n                <md-icon>more_vert</md-icon>\r\n            </button>\r\n\r\n            <md-menu x-position=\"before\" #menu=\"mdMenu\">\r\n                <button md-menu-item>\r\n                    <md-icon style=\"color: #757575;\"> refresh </md-icon>\r\n                    <span> Refresh </span>\r\n                </button>\r\n                <button md-menu-item (click)=\"click_Add()\">\r\n                    <md-icon style=\"color: #757575;\"> add </md-icon>\r\n                    <span> Add </span>\r\n                </button>\r\n            </md-menu>\r\n        </md-card-header>\r\n        <md-divider></md-divider>\r\n        <md-card-content>\r\n            <p-dataTable [value]=\"list\"\r\n                         selectionMode=\"single\"\r\n                         [(selection)]=\"selected\"\r\n                         scrollable=\"true\"\r\n                         scrollHeight=\"200px\"\r\n                         [contextMenu]=\"cm\"\r\n                         (onRowSelect)=\"onRowSelect($event)\"\r\n                         (onRowUnselect)=\"onRowUnselect($event)\"\r\n                         #dt>\r\n                <!--<header>User List</header>\r\n                <footer></footer>-->\r\n                <p-column field=\"equipmentId\" header=\"Id\"></p-column>\r\n                <p-column field=\"name\" header=\"Name\"></p-column>\r\n                <p-column field=\"equipmenttype\" header=\"Type\">\r\n                    <template let-col let-item=\"rowData\" pTemplate type=\"body\">\r\n                        <span>{{item.equipmenttype?item.equipmenttype.name:any}}</span>\r\n                    </template>\r\n                </p-column>\r\n                <p-column field=\"isActive\" header=\"Active\"></p-column>\r\n            </p-dataTable>\r\n            <p-contextMenu #cm [model]=\"menu_items\"  appendTo=\"body\"></p-contextMenu>\r\n            <!--<md-list>\r\n                <md-list-item *ngFor=\"let item of list\">\r\n                    <md-icon md-list-avatar style=\"padding-top: 10px;color: lightgray;\">label_outline</md-icon>\r\n                    <div md-line><span>{{item.name}} {{item.equipmenttype?item.equipmenttype.name:'--'}}</span></div>\r\n                    <p md-line> {{item.isActive?'Enabled':'Disabled'}} </p>\r\n                    <span class=\"example-fill-remaining-space\" style=\"flex: 1 1 auto;\"></span>\r\n                    <button md-icon-button md-tooltip=\"edit item\" (click)=\"click_Edit(item)\" tooltip-position=\"below\">\r\n                        <md-icon style=\"color: #757575;\">edit</md-icon>\r\n                    </button>\r\n                    <button md-icon-button md-tooltip=\"deactivate item\" (click)=\"click_DeActivate(item)\" tooltip-position=\"below\" *ngIf=\"item.isActive\">\r\n                        <md-icon style=\"color: #757575;\">radio_button_checked</md-icon>\r\n                    </button>\r\n                    <button md-icon-button md-tooltip=\"activate item\" (click)=\"click_Activate(item)\" tooltip-position=\"below\" *ngIf=\"!item.isActive\">\r\n                        <md-icon style=\"color: #757575;\">radio_button_unchecked</md-icon>\r\n                    </button>\r\n                    <button md-icon-button md-tooltip=\"delete item\" (click)=\"click_Delete(item)\"  tooltip-position=\"below\">\r\n                        <md-icon style=\"color: #757575;\">delete_forever</md-icon>\r\n                    </button>\r\n                </md-list-item>\r\n                <md-divider></md-divider>\r\n            </md-list>-->\r\n        </md-card-content>\r\n    </md-card>\r\n\r\n</div>"
 
 /***/ },
 
-/***/ 1447:
+/***/ 1569:
 /***/ function(module, exports) {
 
 module.exports = "<div>\r\n    <div md-dialog-title>\r\n        Equipment\r\n    </div>\r\n    <md-dialog-content>\r\n        <div style=\"min-height:150px;\">\r\n            <input [(ngModel)]=\"current.name\" placeholder=\"name\">\r\n        </div>\r\n    </md-dialog-content>\r\n    <md-dialog-actions>\r\n        <button type=\"button\" (click)=\"click_Close()\">Cancel</button>\r\n        <button type=\"button\" (click)=\"click_Save()\">Save</button>\r\n    </md-dialog-actions>\r\n</div>"
-
-/***/ },
-
-/***/ 965:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(313);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_constants__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__crash_component__ = __webpack_require__(1422);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__crash_dialog__ = __webpack_require__(1423);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__crash_routing_module__ = __webpack_require__(1436);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_primeng_primeng__);
-/* harmony export (binding) */ __webpack_require__.d(exports, "CrashModule", function() { return CrashModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-var CrashModule = (function () {
-    function CrashModule() {
-    }
-    CrashModule = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["MaterialModule"],
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
-                __WEBPACK_IMPORTED_MODULE_7__crash_routing_module__["a" /* CrashRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["DataListModule"],
-                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["DataTableModule"],
-                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["ContextMenuModule"],
-                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["DialogModule"],
-                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["ButtonModule"],
-                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["DropdownModule"],
-                __WEBPACK_IMPORTED_MODULE_8_primeng_primeng__["CalendarModule"]
-            ],
-            declarations: [__WEBPACK_IMPORTED_MODULE_5__crash_component__["a" /* CrashComponent */], __WEBPACK_IMPORTED_MODULE_6__crash_dialog__["a" /* CrashDialog */]],
-            exports: [__WEBPACK_IMPORTED_MODULE_6__crash_dialog__["a" /* CrashDialog */]],
-            entryComponents: [__WEBPACK_IMPORTED_MODULE_6__crash_dialog__["a" /* CrashDialog */]],
-            providers: [__WEBPACK_IMPORTED_MODULE_4__app_constants__["a" /* Configuration */]]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], CrashModule);
-    return CrashModule;
-}());
-
-
-/***/ },
-
-/***/ 983:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(3);
-var toPromise_1 = __webpack_require__(520);
-Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
-//# sourceMappingURL=toPromise.js.map
 
 /***/ }
 
